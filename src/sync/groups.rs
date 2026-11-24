@@ -11,7 +11,9 @@ use std::collections::BTreeMap;
 use sqlx::PgPool;
 
 use super::{Check, JobError, JobReport};
-use crate::camara::dto::{BodyMember, DeputySummary, FrontDetail, FrontSummary, Leader};
+use crate::camara::dto::{
+    BodyMember, DeputySummary, FrontDetail, FrontMember, FrontSummary, Leader,
+};
 use crate::camara::{CamaraClient, BOARD_ID, LEGISLATURE};
 use crate::text::front_signatures;
 
@@ -62,7 +64,7 @@ pub async fn run(db: &PgPool, client: &CamaraClient) -> Result<JobReport, JobErr
         // `/frentes/{id}` and `/frentes/{id}/membros` are not paged: the API rejects `itens`.
         let fetched = async {
             let detail: FrontDetail = client.get(&format!("frentes/{}", front.id)).await?;
-            let members: Vec<DeputySummary> =
+            let members: Vec<FrontMember> =
                 client.get(&format!("frentes/{}/membros", front.id)).await?;
             Ok::<_, crate::camara::CamaraError>((detail, members))
         }
@@ -76,10 +78,17 @@ pub async fn run(db: &PgPool, client: &CamaraClient) -> Result<JobReport, JobErr
                 continue;
             }
         };
+        let listed = members.len();
+        let members: Vec<DeputySummary> = members
+            .into_iter()
+            .filter_map(FrontMember::into_summary)
+            .collect();
         let mut conn = db.acquire().await?;
         super::deputies::upsert_summaries(&mut conn, &members, false).await?;
         drop(conn);
-        let record = front_group(&detail, &members);
+        let mut record = front_group(&detail, &members);
+        // Entries with no deputy id are not members we can show. Keep their number.
+        record.details["unidentified_members"] = serde_json::json!(listed - members.len());
         report.items += write_group(db, &record).await?;
     }
     report.checks.push(Check {

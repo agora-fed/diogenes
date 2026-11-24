@@ -84,7 +84,15 @@ async fn fake_api(State(fake): State<Fake>, req: Request) -> Response {
         "frentes/55703/membros" if query.contains("itens") => {
             return (StatusCode::BAD_REQUEST, "itens not allowed").into_response();
         }
-        "frentes/55703/membros" => fixture("frente_membros.json"),
+        "frentes/55703/membros" => {
+            // Like the real API: one entry with no deputy ("id": null, "nome": null).
+            let mut body = fixture("frente_membros.json");
+            body["dados"]
+                .as_array_mut()
+                .unwrap()
+                .push(json!({"id": null, "nome": null, "titulo": "Membro"}));
+            body
+        }
         "votacoes" => {
             // A second roll call: its vote list gives HTTP 404 (the fallback below).
             let mut body = fixture("votacoes.json");

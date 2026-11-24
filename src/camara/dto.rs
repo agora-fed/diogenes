@@ -134,6 +134,47 @@ pub struct FrontDetail {
     pub coordenador: Option<Coordinator>,
 }
 
+/// A member of a front (`/frentes/{id}/membros`). The API sometimes sends an entry with
+/// `"id": null` and `"nome": null`. Such an entry has no deputy, so the sync skips it.
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct FrontMember {
+    /// The deputy id.
+    #[serde(default)]
+    pub id: Option<i32>,
+    /// The parliamentary name.
+    #[serde(default)]
+    pub nome: Option<String>,
+    /// The party acronym.
+    #[serde(default)]
+    pub sigla_partido: Option<String>,
+    /// The state.
+    #[serde(default)]
+    pub sigla_uf: Option<String>,
+    /// The photo URL.
+    #[serde(default)]
+    pub url_foto: Option<String>,
+    /// The role in the front.
+    #[serde(default)]
+    pub titulo: Option<String>,
+}
+
+impl FrontMember {
+    /// Convert to a deputy summary. Return `None` when the id or the name is missing.
+    #[must_use]
+    pub fn into_summary(self) -> Option<DeputySummary> {
+        Some(DeputySummary {
+            id: self.id?,
+            nome: self.nome?,
+            sigla_partido: self.sigla_partido,
+            sigla_uf: self.sigla_uf,
+            url_foto: self.url_foto,
+            email: None,
+            titulo: self.titulo,
+        })
+    }
+}
+
 /// The coordinator of a front.
 #[derive(Debug, Clone, Deserialize)]
 pub struct Coordinator {
@@ -246,6 +287,21 @@ mod tests {
         let coordinator = front.coordenador.unwrap_or_else(|| unreachable!());
         assert_eq!(coordinator.id, None);
         assert_eq!(coordinator.nome.as_deref(), Some("Ismael"));
+    }
+
+    #[test]
+    fn front_member_with_null_id_is_skipped() {
+        // Real entry of /frentes/54341/membros.
+        let raw = r#"[{"id": 1, "nome": "A", "titulo": "Membro"},
+            {"id": null, "uri": null, "nome": null, "siglaPartido": null, "titulo": "Membro"}]"#;
+        let members: Vec<super::FrontMember> =
+            serde_json::from_str(raw).unwrap_or_else(|e| panic!("{e}"));
+        let kept: Vec<_> = members
+            .into_iter()
+            .filter_map(super::FrontMember::into_summary)
+            .collect();
+        assert_eq!(kept.len(), 1);
+        assert_eq!(kept[0].id, 1);
     }
 
     #[test]
