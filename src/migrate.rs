@@ -15,6 +15,25 @@ const MIGRATIONS: &[(i32, &str)] = &[(1, include_str!("../migrations/0001_init.s
 /// # Errors
 /// Returns the database error of the first migration that fails. The runner stops there.
 pub async fn migrate(db: &PgPool) -> Result<usize, sqlx::Error> {
+    // Many host processes can start at the same time (rolling deploy). One session-level
+    // advisory lock lets one process apply the files; the others wait, then find them applied.
+    let mut lock = db.acquire().await?;
+    sqlx::query("SELECT pg_advisory_lock($1)")
+        .bind(MIGRATION_LOCK)
+        .execute(&mut *lock)
+        .await?;
+    let result = apply(db).await;
+    let _unlock = sqlx::query("SELECT pg_advisory_unlock($1)")
+        .bind(MIGRATION_LOCK)
+        .execute(&mut *lock)
+        .await;
+    result
+}
+
+/// The advisory-lock key of the schema runner: "DIO" followed by 0x00FF.
+const MIGRATION_LOCK: i64 = 0x0044_494F_00FF;
+
+async fn apply(db: &PgPool) -> Result<usize, sqlx::Error> {
     sqlx::raw_sql(
         "CREATE TABLE IF NOT EXISTS diogenes_migration (
             version integer PRIMARY KEY,

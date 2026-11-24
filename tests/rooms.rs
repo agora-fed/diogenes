@@ -518,6 +518,9 @@ async fn migrations_are_idempotent() {
     let _guard = SERIAL.lock().await;
     let db = db().await;
     assert_eq!(diogenes::migrate(&db).await.unwrap(), 0);
+    // Two runners at the same time: both finish, with no error.
+    let (a, b) = tokio::join!(diogenes::migrate(&db), diogenes::migrate(&db));
+    assert_eq!((a.unwrap(), b.unwrap()), (0, 0));
     // An operator applies the file again with psql: no error.
     sqlx::raw_sql(include_str!("../migrations/0001_init.sql"))
         .execute(&db)
