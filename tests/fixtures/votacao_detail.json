@@ -1,0 +1,1363 @@
+{
+ "dados": {
+  "efeitosRegistrados": [],
+  "proposicoesAfetadas": [
+   {
+    "id": 2655570,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2655570",
+    "siglaTipo": "PLP",
+    "codTipo": 140,
+    "numero": 299,
+    "ano": 2026,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-19T13:11"
+   }
+  ],
+  "id": "2655570-60",
+  "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2655570-60",
+  "data": "2026-11-23",
+  "dataHoraRegistro": "2026-11-24T00:35:14",
+  "siglaOrgao": "PLEN",
+  "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+  "idOrgao": 180,
+  "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/83419",
+  "idEvento": 83419,
+  "descricao": "Mantido o texto. Sim: 319; Não: 127; Abstenção: 1; Total: 447.",
+  "aprovacao": null,
+  "descUltimaAberturaVotacao": "Votação do DTQ 10 (PL): Destaque para Votação em Separado do art. 6º do Projeto de Lei Complementar nº 299, de 2026, com vistas à sua supressão, apresentado ao PLP 299/2026 (161, I).",
+  "dataHoraUltimaAberturaVotacao": "2026-11-24T00:12:50",
+  "ultimaApresentacaoProposicao": {
+   "dataHoraRegistro": "2026-11-23T21:43:01",
+   "descricao": "Parecer às Emendas de Plenário proferido pelo Relator Dep. Mauro Benevides Filho (UNIÃO/CE) pela:\r\n• Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária de todas as Emendas de Plenário; e, no mérito, pela sua rejeição.\r\n• Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa de todas as Emendas de Plenário.",
+   "uriProposicaoCitada": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659054"
+  },
+  "objetosPossiveis": [
+   {
+    "id": 2659053,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659053",
+    "siglaTipo": "PRLE",
+    "codTipo": 1001,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T21:28"
+   },
+   {
+    "id": 2659031,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659031",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 90,
+    "ano": 0,
+    "ementa": "Complementa as normas de sustentabilidade da dívida pública federal de que tratam o inciso VIII e o parágrafo único do art. 163 da Constituição Federal; altera as Leis Complementares nº 101, de 4 de maio de 2000, nº 200, de 30 de agosto de 2023, nº 224, de 26 de dezembro de 2025, e nº 235, de 27 de agosto de 2026; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T20:40"
+   },
+   {
+    "id": 2659019,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659019",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 89,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T20:19"
+   },
+   {
+    "id": 2659017,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659017",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 88,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T20:19"
+   },
+   {
+    "id": 2659012,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659012",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 87,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:54"
+   },
+   {
+    "id": 2659006,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659006",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 86,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:44"
+   },
+   {
+    "id": 2659005,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659005",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 85,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:44"
+   },
+   {
+    "id": 2659004,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659004",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 84,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:43"
+   },
+   {
+    "id": 2659003,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659003",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 83,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:42"
+   },
+   {
+    "id": 2659002,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659002",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 82,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:41"
+   },
+   {
+    "id": 2659001,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659001",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 81,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:41"
+   },
+   {
+    "id": 2659000,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659000",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 80,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:41"
+   },
+   {
+    "id": 2658999,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658999",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 79,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:41"
+   },
+   {
+    "id": 2658998,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658998",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 78,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:40"
+   },
+   {
+    "id": 2658997,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658997",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 77,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658996,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658996",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 76,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658995,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658995",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 75,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658994,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658994",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 74,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658993,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658993",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 73,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658992,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658992",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 72,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658991,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658991",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 71,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658990,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658990",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 70,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658989,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658989",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 69,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:39"
+   },
+   {
+    "id": 2658988,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658988",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 68,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:32"
+   },
+   {
+    "id": 2658987,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658987",
+    "siglaTipo": "RPD",
+    "codTipo": 890,
+    "numero": 26,
+    "ano": 0,
+    "ementa": "Requerimento Procedimental Genérico - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:27"
+   },
+   {
+    "id": 2658985,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658985",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 67,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para estabelecer critérios de contingenciamento de despesas públicas, priorizando a redução de gastos administrativos e a contenção de despesas do Estado antes da adoção de medidas de aumento da carga tributária, além de assegurar a preservação dos recursos destinados à saúde.",
+    "dataApresentacao": "2026-11-23T19:24"
+   },
+   {
+    "id": 2658986,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658986",
+    "siglaTipo": "RPD",
+    "codTipo": 890,
+    "numero": 25,
+    "ano": 0,
+    "ementa": "Requerimento para Retirada de Tramitação de RPD/DTQ - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:20"
+   },
+   {
+    "id": 2658983,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658983",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 10,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:18"
+   },
+   {
+    "id": 2658984,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658984",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 24,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:18"
+   },
+   {
+    "id": 2658981,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658981",
+    "siglaTipo": "DTQ",
+    "codTipo": 1011,
+    "numero": 9,
+    "ano": 0,
+    "ementa": "Destaque de Emenda - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:16"
+   },
+   {
+    "id": 2658982,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658982",
+    "siglaTipo": "RPD",
+    "codTipo": 1054,
+    "numero": 23,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque de Emenda - PLP 299/2026-Destaque de Emenda - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:16"
+   },
+   {
+    "id": 2658980,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658980",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 22,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:15"
+   },
+   {
+    "id": 2658979,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658979",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 8,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:15"
+   },
+   {
+    "id": 2658978,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658978",
+    "siglaTipo": "RPD",
+    "codTipo": 1054,
+    "numero": 21,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque de Emenda - PLP 299/2026-Destaque de Emenda - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:14"
+   },
+   {
+    "id": 2658976,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658976",
+    "siglaTipo": "DTQ",
+    "codTipo": 1011,
+    "numero": 7,
+    "ano": 0,
+    "ementa": "Destaque de Emenda - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T19:14"
+   },
+   {
+    "id": 2658964,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658964",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 66,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:08"
+   },
+   {
+    "id": 2658963,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658963",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 65,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:08"
+   },
+   {
+    "id": 2658961,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658961",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 64,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T19:08"
+   },
+   {
+    "id": 2658946,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658946",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 63,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:48"
+   },
+   {
+    "id": 2658944,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658944",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 62,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:45"
+   },
+   {
+    "id": 2658943,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658943",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 61,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:45"
+   },
+   {
+    "id": 2658942,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658942",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 60,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:45"
+   },
+   {
+    "id": 2658940,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658940",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 59,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:43"
+   },
+   {
+    "id": 2658939,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658939",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 58,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:43"
+   },
+   {
+    "id": 2658938,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658938",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 57,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:43"
+   },
+   {
+    "id": 2658936,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658936",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 56,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:39"
+   },
+   {
+    "id": 2658935,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658935",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 55,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T18:39"
+   },
+   {
+    "id": 2658933,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658933",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 54,
+    "ano": 0,
+    "ementa": "Altere-se o PLP nº 299/2026, modificando-se o incido XIII do § 8º do art. 4º, a ser incluído na Lei Complementar nº 224, de 26 de dezembro de 2025 pelo art. 4º.",
+    "dataApresentacao": "2026-11-23T18:33"
+   },
+   {
+    "id": 2658932,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658932",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 53,
+    "ano": 0,
+    "ementa": "Altere-se o Substitutivo do PLP nº 299/2026, modificando-se o § 5º do art. 5º, o art. 6-C, o art. 6-D e o art. 6-E, a serem incluído na Lei Complementar nº 200, de 30 de agosto de 2023 pelo art. 1º.",
+    "dataApresentacao": "2026-11-23T18:33"
+   },
+   {
+    "id": 2658931,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658931",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 52,
+    "ano": 0,
+    "ementa": "Altera o art. 1º do Projeto de Lei Complementar nº 299, de 2026, na parte que introduz os arts. 5º, 6º-C, 6º-D, 6º-E e 6º-F à Lei Complementar nº 200, de 30 de agosto de 2023, para tornar obrigatória a adoção das medidas de contenção fiscal e de restrição à compensação tributária no caso de descumprimento do limite inferior da meta fiscal, e conferir caráter autorizativo à contenção no intervalo de tolerância.",
+    "dataApresentacao": "2026-11-23T18:30"
+   },
+   {
+    "id": 2658930,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658930",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 51,
+    "ano": 0,
+    "ementa": "Estabelece a redução proporcional dos limites individualizados de despesas primárias dos Poderes Legislativo e Judiciário e dos órgãos constitucionalmente autônomos, nas hipóteses de contenção fiscal previstas na Lei Complementar nº 200, de 30 de agosto de 2023, e disciplina os efeitos orçamentários da economia decorrente da regulamentação do teto remuneratório.",
+    "dataApresentacao": "2026-11-23T18:30"
+   },
+   {
+    "id": 2658922,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658922",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 20,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026-Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:19"
+   },
+   {
+    "id": 2658921,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658921",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 19,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:19"
+   },
+   {
+    "id": 2658919,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658919",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 18,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026-Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2658918,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658918",
+    "siglaTipo": "RPD",
+    "codTipo": 1043,
+    "numero": 17,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Votação Matéria Urgente - PLP 299/2026-Requerimento de Adiamento da Votação Matéria Urgente - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2658916,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658916",
+    "siglaTipo": "RPD",
+    "codTipo": 1041,
+    "numero": 16,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Adiamento da Discussão Matéria Urgente - PLP 299/2026-Requerimento de Adiamento da Discussão Matéria Urgente - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2658915,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658915",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 15,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2658914,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658914",
+    "siglaTipo": "RPD",
+    "codTipo": 467,
+    "numero": 14,
+    "ano": 0,
+    "ementa": "Requerimento de Adiamento da Votação Matéria Urgente - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2658913,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658913",
+    "siglaTipo": "RPD",
+    "codTipo": 892,
+    "numero": 13,
+    "ano": 0,
+    "ementa": "Requerimento de Adiamento da Discussão Matéria Urgente - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T18:13"
+   },
+   {
+    "id": 2659007,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659007",
+    "siglaTipo": "PPP",
+    "codTipo": 192,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Parecer proferido em Plenário pelo Relator Dep. Mauro Benevides Filho (UNIÃO/CE) pela: • Comissão de Finanças e Tributação, que conclui pela compatibilidade e adequação financeira e orçamentária do PLP nº 299, de 2026; e, no mérito, por sua aprovação. • Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa do PLP nº 299, de 2026.",
+    "dataApresentacao": "2026-11-23T18:00"
+   },
+   {
+    "id": 2659054,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659054",
+    "siglaTipo": "PEP",
+    "codTipo": 442,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Parecer às Emendas de Plenário proferido pelo Relator Dep. Mauro Benevides Filho (UNIÃO/CE) pela: • Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária de todas as Emendas de Plenário; e, no mérito, pela sua rejeição. • Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa de todas as Emendas de Plenário.",
+    "dataApresentacao": "2026-11-23T18:00"
+   },
+   {
+    "id": 2659032,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2659032",
+    "siglaTipo": "RPD",
+    "codTipo": 1000,
+    "numero": 27,
+    "ano": 0,
+    "ementa": "Requerimento de Encerramento da Discussão e do Encaminhamento da Votação - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T17:49"
+   },
+   {
+    "id": 2658902,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658902",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 50,
+    "ano": 0,
+    "ementa": "Acrescente-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, o seguinte § 3º: \n“Art. 6º-F. ..................................................\n...............................................................\n§ 3º A redução de que trata o caput somente poderá ser aplicada no exercício financeiro de 2027.” (NR)",
+    "dataApresentacao": "2026-11-23T17:41"
+   },
+   {
+    "id": 2658901,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658901",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 49,
+    "ano": 0,
+    "ementa": "Acrescente-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, o seguinte § 3º:\n“Art. 6º-F. ..................................................\n...............................................................\n§ 3º O prazo para a utilização em compensação do crédito cuja compensação tenha sido reduzida nos termos deste artigo e o prazo para o pedido de sua restituição ou de seu ressarcimento, in-clusive o de que trata o art. 168 da Lei nº 5.172, de 25 de outubro de 1966 (Código Tributário Nacional), ficam acrescidos do período em que o contribuinte esteve impedido de compensá-lo em razão da re-dução.” (NR)",
+    "dataApresentacao": "2026-11-23T17:41"
+   },
+   {
+    "id": 2658900,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658900",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 48,
+    "ano": 0,
+    "ementa": "Acrescente-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, o seguinte § 3º:\n“Art. 6º-F. ..................................................\n...............................................................\n§ 3º O crédito cuja compensação tenha sido reduzida nos termos deste artigo será acrescido de juros equivalentes à taxa refer-encial do Sistema Especial de Liquidação e de Custódia (Selic) para títulos federais, acumulada mensalmente, calculados a partir do mês subsequente àquele em que a compensação poderia ter sido efetuada até o mês anterior ao da compensação, restituição ou ressarcimento, e de 1% (um por cento) relativamente ao mês em que estes forem efet-uados.” (NR)",
+    "dataApresentacao": "2026-11-23T17:41"
+   },
+   {
+    "id": 2658899,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658899",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 47,
+    "ano": 0,
+    "ementa": "EMENDA Nº ____ – PLEN\n(ao Projeto de Lei Complementar nº 299, de 2026)\nAcrescente-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, o seguinte § 3º:\n“Art. 6º-F. ..................................................\n...............................................................\n§ 3º A redução de que trata o caput não se aplica aos crédi-tos:\nI – informados em pedido de restituição, de ressarcimento ou de reembolso ou em declaração de compensação transmitidos até a data de publicação do ato de que trata o § 1º; e\nII – reconhecidos por decisão judicial transitada em julgado até a data de publicação do ato de que trata o § 1º.” (NR)",
+    "dataApresentacao": "2026-11-23T17:40"
+   },
+   {
+    "id": 2658897,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658897",
+    "siglaTipo": "DTQ",
+    "codTipo": 1011,
+    "numero": 6,
+    "ano": 0,
+    "ementa": "Destaque de Emenda - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T17:31"
+   },
+   {
+    "id": 2658895,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658895",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 46,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:18"
+   },
+   {
+    "id": 2658894,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658894",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 45,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:18"
+   },
+   {
+    "id": 2658893,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658893",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 44,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:18"
+   },
+   {
+    "id": 2658892,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658892",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 43,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:17"
+   },
+   {
+    "id": 2658891,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658891",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 42,
+    "ano": 0,
+    "ementa": "Dê-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, na forma do texto aprovado no Senado Federal, a seguinte redação:\n“Art. 6º-F. \n..........................................................................................................................................................................................................................\n§ 3º A redução de que trata o caput:\nI – não excederá 50% (cinquenta por cento) do valor dos créditos que o contribuinte poderia compensar em cada período de apuração;\nII – não se aplica aos créditos reconhecidos por decisão judicial transitada em julgado nem aos créditos vinculados a operações de exportação; e\nIII – produzirá efeitos após decorridos noventa dias da publicação do ato de que trata o § 3º.\n§ 4º O crédito cuja compensação for reduzida nos termos deste artigo:\nI – poderá ser compensado a partir do primeiro dia do exercício financeiro seguinte, sem nova redução;\nII – será acrescido de juros equivalentes à taxa referencial do Sistema Especial de Liquidação e de Custódia (Selic), a partir da data em que a compensação poderia ter sido efetuada; e\nIII – terá suspenso o prazo para seu aproveitamento enquanto durar a restrição.” (NR)",
+    "dataApresentacao": "2026-11-23T17:14"
+   },
+   {
+    "id": 2658888,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658888",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 41,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:09"
+   },
+   {
+    "id": 2658886,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658886",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 40,
+    "ano": 0,
+    "ementa": "Acrescente-se ao art. 6º-F acrescido à Lei Complementar nº 200, de 30 de agosto de 2023, pelo art. 1º do Projeto de Lei Complementar nº 299, de 2026, o seguinte § 3º: \n“Art. 6º-F. ..................................................\n...............................................................\n§ 3º A redução de que trata o caput não excederá 50% (cinquenta por cento) do valor dos créditos que o contribuinte poderia compensar em cada período de apuração.” (NR)",
+    "dataApresentacao": "2026-11-23T17:04"
+   },
+   {
+    "id": 2658885,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658885",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 39,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T17:02"
+   },
+   {
+    "id": 2658882,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658882",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 38,
+    "ano": 0,
+    "ementa": "Acrescente-se ao art. 6º-D da Lei Complementar nº 200, de 30 de agosto de 2023, na forma do art. 1º do Projeto, o seguinte parágrafo:\n\"Art. 6º-D ...............................................................................\n§ __. Não se sujeitam às limitações de empenho e movimentação financeira de que tratam o art. 6º-C e este artigo as despesas com programas e ações de saúde, educação, assistência social e inclusão destinados às pessoas com deficiência e às pessoas com transtorno do espectro autista.” (NR)",
+    "dataApresentacao": "2026-11-23T17:01"
+   },
+   {
+    "id": 2658879,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658879",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 12,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T16:49"
+   },
+   {
+    "id": 2658877,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658877",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 11,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T16:34"
+   },
+   {
+    "id": 2658871,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658871",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 37,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658870,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658870",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 36,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658868,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658868",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 35,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658867,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658867",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 34,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658866,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658866",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 33,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658865,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658865",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 32,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T16:22"
+   },
+   {
+    "id": 2658862,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658862",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 10,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026-Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T16:07"
+   },
+   {
+    "id": 2658860,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658860",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 9,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T16:07"
+   },
+   {
+    "id": 2658859,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658859",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 8,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T15:56"
+   },
+   {
+    "id": 2658858,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658858",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 5,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T15:56"
+   },
+   {
+    "id": 2658857,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658857",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 31,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:51"
+   },
+   {
+    "id": 2658855,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658855",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 30,
+    "ano": 0,
+    "ementa": "Acrescentem-se ao Projeto de Lei Complementar nº 299, de 2026, após o art. 10, os seguintes arts. 11 e 12, renumerando-se os demais.",
+    "dataApresentacao": "2026-11-23T15:47"
+   },
+   {
+    "id": 2658854,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658854",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 29,
+    "ano": 0,
+    "ementa": "Acrescentem-se ao Projeto de Lei Complementar nº 299, de 2026, após o art. 14, os seguintes arts. 15 a 17, renumerando-se o atual art. 15.",
+    "dataApresentacao": "2026-11-23T15:47"
+   },
+   {
+    "id": 2658848,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658848",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 28,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:33"
+   },
+   {
+    "id": 2658847,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658847",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 27,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:33"
+   },
+   {
+    "id": 2658846,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658846",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 26,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:33"
+   },
+   {
+    "id": 2658841,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658841",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 25,
+    "ano": 0,
+    "ementa": "Altera o inciso II do § 1º do art. 10 do Projeto de Lei Complementar nº 299, de 2026, para incluir a Defesa Nacional entre as áreas contempladas com recursos economizados em decorrência da regulamentação do § 11 do art. 37 da Constituição Federal, quando apurados no âmbito do Poder Executivo federal.",
+    "dataApresentacao": "2026-11-23T15:23"
+   },
+   {
+    "id": 2658832,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658832",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 24,
+    "ano": 0,
+    "ementa": "Acrescenta dispositivo ao art. 7º do Projeto de Lei Complementar nº 299, de 2026, para assegurar a preservação das dotações orçamentárias destinadas à Segurança Pública e à Defesa Nacional, resguardando os recursos necessários à continuidade de suas atividades e ao cumprimento de suas atribuições constitucionais.",
+    "dataApresentacao": "2026-11-23T15:23"
+   },
+   {
+    "id": 2658827,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658827",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 23,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:17"
+   },
+   {
+    "id": 2658826,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658826",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 22,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:17"
+   },
+   {
+    "id": 2658825,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658825",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 21,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:17"
+   },
+   {
+    "id": 2658824,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658824",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 20,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:16"
+   },
+   {
+    "id": 2658823,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658823",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 19,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:16"
+   },
+   {
+    "id": 2658820,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658820",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 18,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T15:13"
+   },
+   {
+    "id": 2658818,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2658818",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 17,
+    "ano": 0,
+    "ementa": "Acrescenta dispositivo à Lei Complementar nº 206, de 16 de maio de 2024, para prorrogar por 60 (sessenta) meses a suspensão da exigibilidade dos pagamentos da dívida do Estado do Rio Grande do Sul com a União, com incidência de juros à taxa de 0% (zero por cento) ao ano durante o período, vedada a capitalização e a cobrança futura dos juros correspondentes, em razão dos sucessivos eventos climáticos extremos que atingiram o Estado e da necessidade de assegurar recursos para sua reconstrução, recuperação econômica e prevenção de novos desastres.",
+    "dataApresentacao": "2026-11-23T15:08"
+   },
+   {
+    "id": 2657803,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657803",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 7,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T14:49"
+   },
+   {
+    "id": 2657802,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657802",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 4,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T14:49"
+   },
+   {
+    "id": 2657783,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657783",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 16,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T14:21"
+   },
+   {
+    "id": 2657779,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657779",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 15,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T14:21"
+   },
+   {
+    "id": 2657765,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657765",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 6,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T13:50"
+   },
+   {
+    "id": 2657764,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657764",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 3,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T13:50"
+   },
+   {
+    "id": 2657758,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2657758",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 14,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº?200, de 30 de agosto de 2023, a Lei Complementar nº?176, de 29 de dezembro de 2020, a Lei Complementar nº?235, de 27 de agosto de 2026, a Lei Complementar nº?224, de 26 de dezembro de 2025, a Lei nº?11.540, de 12 de novembro de 2007, e a Lei nº?9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T13:46"
+   },
+   {
+    "id": 2656787,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656787",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 5,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026-Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T12:12"
+   },
+   {
+    "id": 2656786,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656786",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 4,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T12:12"
+   },
+   {
+    "id": 2656778,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656778",
+    "siglaTipo": "RPD",
+    "codTipo": 1051,
+    "numero": 3,
+    "ano": 0,
+    "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 299/2026-Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T11:52"
+   },
+   {
+    "id": 2656775,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656775",
+    "siglaTipo": "RPD",
+    "codTipo": 328,
+    "numero": 2,
+    "ano": 0,
+    "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T11:52"
+   },
+   {
+    "id": 2656774,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656774",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 13,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656773,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656773",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 12,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656772,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656772",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 11,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656771,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656771",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 10,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656770,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656770",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 9,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656769,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656769",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 8,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656768,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656768",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 7,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, para conferir ao Poder Executivo federal novos instrumentos de gestão com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao crescimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-23T11:46"
+   },
+   {
+    "id": 2656756,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656756",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 6,
+    "ano": 0,
+    "ementa": "Suprima-se o art. 3º do Projeto de Lei Complementar nº 299, de 2026.",
+    "dataApresentacao": "2026-11-23T11:11"
+   },
+   {
+    "id": 2656755,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656755",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 5,
+    "ano": 0,
+    "ementa": "Renumere-se o parágrafo único do art. 12 do Projeto de Lei Complementar nº 299, de 2026, como § 1º, acrescentando-se o seguinte § 2º:\n“Art. 12. ...............................................................................\n§ 2º Na seleção dos investimentos estruturantes de que trata este artigo, será conferida prioridade, em igualdade de condições, à conclusão de obras e à aquisição de equipamentos destinados à rede pública de saúde, considerados o estágio de execução, a relevância regional, o custo-benefício e a capacidade de manutenção dos serviços, observados os limites orçamentários e fiscais aplicáveis.”",
+    "dataApresentacao": "2026-11-23T11:09"
+   },
+   {
+    "id": 2656754,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656754",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 4,
+    "ano": 0,
+    "ementa": "Dê-se ao art. 6º do Projeto de Lei Complementar nº 299, de 2026, a seguinte redação:\n“Art. 6º O art. 8º-C da Lei nº 9.796, de 5 de maio de 1999, passa a vigorar acrescido dos seguintes §§ 1º e 2º:\n'Art. 8º-C. ..........................................................................\n§ 1º Entre os exercícios de 2027 e 2030, a despesa de que trata o caput fica limitada a R$ 3.000.000.000,00 (três bilhões de reais) ao ano, corrigidos pelo crescimento anual do limite de despesa a que se refere o art. 3º da Lei Complementar nº 200, de 30 de agosto de 2023.\n§ 2º A aplicação do limite financeiro previsto no § 1º não prejudica o reconhecimento das obrigações regularmente constituídas, devendo os valores que o excederem constar de demonstrativo público de obrigações pendentes, com atualização monetária e cronograma de quitação.' (NR)”",
+    "dataApresentacao": "2026-11-23T11:09"
+   },
+   {
+    "id": 2656753,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656753",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 3,
+    "ano": 0,
+    "ementa": "Suprimam-se, no art. 1º do Projeto de Lei Complementar nº 299, de 2026, as disposições que acrescentam o art. 6º-F e seu parágrafo único à Lei Complementar nº 200, de 30 de agosto de 2023.",
+    "dataApresentacao": "2026-11-23T11:09"
+   },
+   {
+    "id": 2656752,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656752",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 2,
+    "ano": 0,
+    "ementa": "Suprima-se o art. 6º do Projeto de Lei Complementar nº 299, de 2026, que acrescenta parágrafo único ao art. 8º-C da Lei nº 9.796, de 5 de maio de 1999, renumerando-se os dispositivos subsequentes.",
+    "dataApresentacao": "2026-11-23T11:09"
+   },
+   {
+    "id": 2656751,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656751",
+    "siglaTipo": "EMP",
+    "codTipo": 870,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Dê-se ao inciso I do § 1º do art. 10 do Projeto de Lei Complementar nº 299, de 2026, a seguinte redação:\n“Art.10. ....................................................................................\n§ 1º............................................................................................\nI – destinado à reestruturação de carreiras e à recomposição dos quadros de pessoal do Poder Executivo federal, nos termos da legislação aplicável, vedada a redução correspondente do limite individualizado de despesas primárias de que trata o inciso I do art. 3º da Lei Complementar nº 200, de 30 de agosto de 2023; e\n............................................................................” (NR)",
+    "dataApresentacao": "2026-11-23T11:09"
+   },
+   {
+    "id": 2656750,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656750",
+    "siglaTipo": "RPD",
+    "codTipo": 1053,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 299/2026-Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T10:56"
+   },
+   {
+    "id": 2656749,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656749",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 2,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T10:56"
+   },
+   {
+    "id": 2656731,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2656731",
+    "siglaTipo": "DTQ",
+    "codTipo": 846,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Destaque para Votação em Separado - PLP 299/2026",
+    "dataApresentacao": "2026-11-23T09:00"
+   },
+   {
+    "id": 2655708,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2655708",
+    "siglaTipo": "REQ",
+    "codTipo": 392,
+    "numero": 4504,
+    "ano": 2026,
+    "ementa": "Requer, nos termos do artigo 155 do Regimento Interno, tramitação sob o regime urgência do Projeto de Lei Complementar nº 299, de 2026.",
+    "dataApresentacao": "2026-11-19T18:47"
+   },
+   {
+    "id": 2655706,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2655706",
+    "siglaTipo": "PRLP",
+    "codTipo": 891,
+    "numero": 1,
+    "ano": 0,
+    "ementa": "Altera a Lei Complementar nº 200, de 30 de agosto de 2023, a Lei Complementar nº 176, de 29 de dezembro de 2020, a Lei Complementar nº 235, de 27 de agosto de 2026, a Lei Complementar nº 224, de 26 de dezembro de 2025, a Lei nº 11.540, de 12 de novembro de 2007, e a Lei nº 9.796, de 5 de maio de 1999, para conferir ao Poder Executivo federal novos instrumentos de gestão, com vistas a garantir a estabilidade macroeconômica do País e criar as condições adequadas ao desenvolvimento socioeconômico; e dá outras providências.",
+    "dataApresentacao": "2026-11-19T18:34"
+   }
+  ]
+ },
+ "links": [
+  {
+   "rel": "self",
+   "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2655570-60"
+  }
+ ]
+}

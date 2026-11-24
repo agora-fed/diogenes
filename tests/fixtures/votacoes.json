@@ -1,0 +1,18 @@
+{
+ "dados": [
+  {
+   "id": "2655570-60",
+   "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2655570-60",
+   "data": "2026-11-23",
+   "dataHoraRegistro": "2026-11-24T00:35:14",
+   "siglaOrgao": "PLEN",
+   "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+   "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/83419",
+   "proposicaoObjeto": null,
+   "uriProposicaoObjeto": null,
+   "descricao": "Mantido o texto. Sim: 319; Não: 127; Abstenção: 1; Total: 447.",
+   "aprovacao": null
+  }
+ ],
+ "links": []
+}

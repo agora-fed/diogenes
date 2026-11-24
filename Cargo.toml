@@ -1,0 +1,43 @@
+[package]
+name = "diogenes"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+authors = ["PopSolutions Software & Comunicação LTDA (cooperatively managed)"]
+repository = "https://github.com/agora-fed/diogenes"
+rust-version = "1.86"
+description = "Vote-count and articulation rooms for the Brazilian Chamber of Deputies. An add-on for the AGORA framework."
+readme = "README.md"
+include = ["src/**/*", "migrations/*.sql", "Cargo.toml", "README.md", "LICENSE"]
+
+[lints.rust]
+unsafe_code = "forbid"
+unreachable_pub = "warn"
+missing_debug_implementations = "warn"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+unwrap_used = "warn"
+expect_used = "warn"
+
+[dependencies]
+axum = { version = "0.8", features = ["macros"] }
+async-trait = "0.1"
+chrono = { version = "0.4", default-features = false, features = ["serde", "clock"] }
+csv = "1"
+futures-util = { version = "0.3", default-features = false, features = ["std"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "tls-rustls", "postgres", "uuid", "chrono", "macros", "json"] }
+thiserror = "2"
+tokio = { version = "1.43", features = ["rt-multi-thread", "macros", "time", "sync"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+tracing = "0.1"
+uuid = { version = "1", features = ["v7", "serde"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tokio = { version = "1.43", features = ["net", "rt-multi-thread", "macros"] }
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"

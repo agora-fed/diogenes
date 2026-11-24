@@ -1,0 +1,2105 @@
+{
+ "dados": [
+  {
+   "parlamentar": {
+    "id": 133439,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/133439",
+    "nome": "André Figueiredo",
+    "siglaPartido": "PDT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786",
+    "siglaUf": "CE",
+    "idLegislatura": 57,
+    "email": "dep.andrefigueiredo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/133439.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-01-31",
+   "dataFim": "2025-09-17"
+  },
+  {
+   "parlamentar": {
+    "id": 178975,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178975",
+    "nome": "Baleia Rossi",
+    "siglaPartido": "MDB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.baleiarossi@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178975.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "MDB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 107283,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/107283",
+    "nome": "Gleisi Hoffmann",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "PR",
+    "idLegislatura": 57,
+    "email": "dep.gleisihoffmann@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/107283.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-03-10"
+  },
+  {
+   "parlamentar": {
+    "id": 160510,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160510",
+    "nome": "Luis Tibé",
+    "siglaPartido": "AVANTE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.luistibe@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160510.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "AVANTE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2026-03-31"
+  },
+  {
+   "parlamentar": {
+    "id": 204506,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204506",
+    "nome": "Marcos Pereira",
+    "siglaPartido": "REPUBLICANOS",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.marcospereira@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204506.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "REPUBLICANOS",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 178989,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178989",
+    "nome": "Renata Abreu",
+    "siglaPartido": "PODE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36896",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.renataabreu@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178989.jpgmaior.jpg"
+   },
+   "titulo": "Presidente",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PODE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36896"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2026-06-16"
+  },
+  {
+   "parlamentar": {
+    "id": 141470,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/141470",
+    "nome": "José Guimarães",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "CE",
+    "idLegislatura": 57,
+    "email": "dep.joseguimaraes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/141470.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2026-04-14"
+  },
+  {
+   "parlamentar": {
+    "id": 220681,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220681",
+    "nome": "Fábio Macedo",
+    "siglaPartido": "PODE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36896",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.fabiomacedo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220681.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PODE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36896"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2024-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 160674,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160674",
+    "nome": "Hugo Motta",
+    "siglaPartido": "REPUBLICANOS",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+    "siglaUf": "PB",
+    "idLegislatura": 57,
+    "email": "dep.hugomotta@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160674.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "REPUBLICANOS",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 204494,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204494",
+    "nome": "Fred Costa",
+    "siglaPartido": "PRD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38010",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.fredcosta@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204494.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PATRIOTA",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37907"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2023-12-12"
+  },
+  {
+   "parlamentar": {
+    "id": 160553,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160553",
+    "nome": "Antonio Brito",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.antoniobrito@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160553.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSD",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 178882,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178882",
+    "nome": "André Fufuca",
+    "siglaPartido": "PP",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37903",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.andrefufuca@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178882.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PP",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37903"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2023-09-12"
+  },
+  {
+   "parlamentar": {
+    "id": 72442,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/72442",
+    "nome": "Felipe Carreras",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.felipecarreras@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/72442.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2023-12-22"
+  },
+  {
+   "parlamentar": {
+    "id": 160510,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160510",
+    "nome": "Luis Tibé",
+    "siglaPartido": "AVANTE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.luistibe@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160510.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "AVANTE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-05-08"
+  },
+  {
+   "parlamentar": {
+    "id": 204560,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204560",
+    "nome": "Adolfo Viana",
+    "siglaPartido": "PSDB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36835",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.adolfoviana@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204560.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSDB CIDADANIA",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/585"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 178937,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178937",
+    "nome": "Altineu Côrtes",
+    "siglaPartido": "PL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.altineucortes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178937.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PL",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 178854,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178854",
+    "nome": "Elmar Nascimento",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.elmarnascimento@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178854.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 220612,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220612",
+    "nome": "Bebeto",
+    "siglaPartido": "PP",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37903",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.bebeto@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220612.jpgmaior.jpg"
+   },
+   "titulo": "Representante",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PTB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36845"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2023-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 204528,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204528",
+    "nome": "Adriana Ventura",
+    "siglaPartido": "NOVO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37901",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.adrianaventura@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204528.jpgmaior.jpg"
+   },
+   "titulo": "Representante",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "NOVO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37901"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2025-04-24"
+  },
+  {
+   "parlamentar": {
+    "id": 160512,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160512",
+    "nome": "Aureo Ribeiro",
+    "siglaPartido": "SOLIDARIEDADE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37904",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.aureoribeiro@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160512.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "SOLIDARIEDADE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/37904"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 204436,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204436",
+    "nome": "Isnaldo Bulhões Jr.",
+    "siglaPartido": "MDB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+    "siglaUf": "AL",
+    "idLegislatura": 57,
+    "email": "dep.isnaldobulhoesjr@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204436.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "MDB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 133439,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/133439",
+    "nome": "André Figueiredo",
+    "siglaPartido": "PDT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786",
+    "siglaUf": "CE",
+    "idLegislatura": 57,
+    "email": "dep.andrefigueiredo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/133439.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2024-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 160592,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160592",
+    "nome": "Zeca Dirceu",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "PR",
+    "idLegislatura": 57,
+    "email": "dep.zecadirceu@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160592.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2024-02-07"
+  },
+  {
+   "parlamentar": {
+    "id": 220639,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220639",
+    "nome": "Guilherme Boulos",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220639.jpgmaior.jpg"
+   },
+   "titulo": "Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-02-01",
+   "dataFim": "2024-02-21"
+  },
+  {
+   "parlamentar": {
+    "id": 160538,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160538",
+    "nome": "Bohn Gass",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.bohngass@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160538.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 141398,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/141398",
+    "nome": "Carlos Zarattini",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.carloszarattini@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/141398.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 74060,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74060",
+    "nome": "Daniel Almeida",
+    "siglaPartido": "PCdoB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36779",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.danielalmeida@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74060.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 220573,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220573",
+    "nome": "Dorinaldo Malafaia",
+    "siglaPartido": "PDT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786",
+    "siglaUf": "AP",
+    "idLegislatura": 57,
+    "email": "dep.dorinaldomalafaia@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220573.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 74858,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74858",
+    "nome": "Lindbergh Farias",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.lindberghfarias@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74858.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 74161,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74161",
+    "nome": "Reginaldo Lopes",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.reginaldolopes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74161.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 204573,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204573",
+    "nome": "Otto Alencar Filho",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204573.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": "2025-12-23"
+  },
+  {
+   "parlamentar": {
+    "id": 139285,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/139285",
+    "nome": "Lídice da Mata",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.lidicedamata@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/139285.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": "2024-02-28"
+  },
+  {
+   "parlamentar": {
+    "id": 73806,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/73806",
+    "nome": "Roseana Sarney",
+    "siglaPartido": "MDB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/73806.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-15",
+   "dataFim": "2023-12-19"
+  },
+  {
+   "parlamentar": {
+    "id": 74856,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74856",
+    "nome": "Laura Carneiro",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.lauracarneiro@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74856.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-16",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 122974,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/122974",
+    "nome": "Pedro Lucas Fernandes",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.pedrolucasfernandes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/122974.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo no CN",
+    "nome": "Governo no CN",
+    "uri": null
+   },
+   "dataInicio": "2023-02-27",
+   "dataFim": "2025-02-05"
+  },
+  {
+   "parlamentar": {
+    "id": 204501,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204501",
+    "nome": "Alencar Santana",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.alencarsantana@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204501.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2025-05-05"
+  },
+  {
+   "parlamentar": {
+    "id": 178887,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178887",
+    "nome": "Rubens Pereira Júnior",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.rubenspereirajunior@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178887.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 220556,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220556",
+    "nome": "Ana Paula Lima",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "SC",
+    "idLegislatura": 57,
+    "email": "dep.anapaulalima@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220556.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 74467,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74467",
+    "nome": "Damião Feliciano",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "PB",
+    "idLegislatura": 57,
+    "email": "dep.damiaofeliciano@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74467.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 198783,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/198783",
+    "nome": "Emanuel Pinheiro Neto",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "MT",
+    "idLegislatura": 57,
+    "email": "dep.emanuelpinheironeto@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/198783.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 122158,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/122158",
+    "nome": "Pedro Paulo",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.pedropaulo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/122158.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 73801,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/73801",
+    "nome": "Renildo Calheiros",
+    "siglaPartido": "PCdoB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36779",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.renildocalheiros@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/73801.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2025-05-05"
+  },
+  {
+   "parlamentar": {
+    "id": 220578,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220578",
+    "nome": "Josenildo",
+    "siglaPartido": "PDT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786",
+    "siglaUf": "AP",
+    "idLegislatura": 57,
+    "email": "dep.josenildo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220578.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2024-03-13"
+  },
+  {
+   "parlamentar": {
+    "id": 160548,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160548",
+    "nome": "Jonas Donizette",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.jonasdonizette@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160548.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2024-03-13"
+  },
+  {
+   "parlamentar": {
+    "id": 69871,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/69871",
+    "nome": "Bacelar",
+    "siglaPartido": "PV",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36851",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.bacelar@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/69871.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2025-05-05"
+  },
+  {
+   "parlamentar": {
+    "id": 220668,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220668",
+    "nome": "Maria Arraes",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.mariaarraes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220668.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 91228,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/91228",
+    "nome": "Waldemar Oliveira",
+    "siglaPartido": "AVANTE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.waldemaroliveira@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/91228.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 204508,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204508",
+    "nome": "Igor Timo",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.igortimo@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204508.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2024-03-13"
+  },
+  {
+   "parlamentar": {
+    "id": 204480,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204480",
+    "nome": "Rogério Correia",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.rogeriocorreia@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204480.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": "2025-05-05"
+  },
+  {
+   "parlamentar": {
+    "id": 220615,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220615",
+    "nome": "Pastor Henrique Vieira",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.pastorhenriquevieira@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220615.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Governo na CD",
+    "nome": "Governo na CD",
+    "uri": null
+   },
+   "dataInicio": "2023-03-01",
+   "dataFim": null
+  },
+  {
+   "parlamentar": {
+    "id": 204407,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204407",
+    "nome": "Fernanda Melchionna",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.fernandamelchionna@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204407.jpgmaior.jpg"
+   },
+   "titulo": "1º Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-02",
+   "dataFim": "2023-03-07"
+  },
+  {
+   "parlamentar": {
+    "id": 220598,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220598",
+    "nome": "Tarcísio Motta",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.tarcisiomotta@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220598.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-02",
+   "dataFim": "2023-06-20"
+  },
+  {
+   "parlamentar": {
+    "id": 220645,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220645",
+    "nome": "Erika Hilton",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.erikahilton@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220645.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-02",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 157130,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/157130",
+    "nome": "Túlio Gadêlha",
+    "siglaPartido": "PSD",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36834",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.tuliogadelha@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/157130.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-02",
+   "dataFim": "2023-04-20"
+  },
+  {
+   "parlamentar": {
+    "id": 204535,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204535",
+    "nome": "Sâmia Bomfim",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.samiabomfim@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204535.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-07",
+   "dataFim": "2023-03-07"
+  },
+  {
+   "parlamentar": {
+    "id": 204407,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204407",
+    "nome": "Fernanda Melchionna",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.fernandamelchionna@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204407.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-07",
+   "dataFim": "2023-03-09"
+  },
+  {
+   "parlamentar": {
+    "id": 206018,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/206018",
+    "nome": "Célia Xakriabá",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.celiaxakriaba@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/206018.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-03-09"
+  },
+  {
+   "parlamentar": {
+    "id": 204407,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204407",
+    "nome": "Fernanda Melchionna",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.fernandamelchionna@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204407.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSOL REDE",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/586"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-03-22"
+  },
+  {
+   "parlamentar": {
+    "id": 74057,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74057",
+    "nome": "Alice Portugal",
+    "siglaPartido": "PCdoB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36779",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.aliceportugal@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74057.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-06-14"
+  },
+  {
+   "parlamentar": {
+    "id": 220632,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220632",
+    "nome": "Ana Pimentel",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.anapimentel@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220632.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-06-13"
+  },
+  {
+   "parlamentar": {
+    "id": 220548,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220548",
+    "nome": "Camila Jara",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MS",
+    "idLegislatura": 57,
+    "email": "dep.camilajara@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220548.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-08-22"
+  },
+  {
+   "parlamentar": {
+    "id": 204426,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204426",
+    "nome": "Carlos Veras",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.carlosveras@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204426.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-12"
+  },
+  {
+   "parlamentar": {
+    "id": 220629,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220629",
+    "nome": "Dandara",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.dandara@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220629.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-09-13"
+  },
+  {
+   "parlamentar": {
+    "id": 220565,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220565",
+    "nome": "Delegada Adriana Accorsi",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "GO",
+    "idLegislatura": 57,
+    "email": "dep.delegadaadrianaaccorsi@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220565.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-08-09"
+  },
+  {
+   "parlamentar": {
+    "id": 220602,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220602",
+    "nome": "Dimas Gadelha",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.dimasgadelha@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220602.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-05-10"
+  },
+  {
+   "parlamentar": {
+    "id": 160575,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160575",
+    "nome": "Erika Kokay",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "DF",
+    "idLegislatura": 57,
+    "email": "dep.erikakokay@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160575.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2025-02-01"
+  },
+  {
+   "parlamentar": {
+    "id": 178873,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178873",
+    "nome": "Helder Salomão",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "ES",
+    "idLegislatura": 57,
+    "email": "dep.heldersalomao@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178873.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220527,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220527",
+    "nome": "Jack Rocha",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "ES",
+    "idLegislatura": 57,
+    "email": "dep.jackrocha@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220527.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-26"
+  },
+  {
+   "parlamentar": {
+    "id": 220697,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220697",
+    "nome": "Jadyel Alencar",
+    "siglaPartido": "REPUBLICANOS",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+    "siglaUf": "PI",
+    "idLegislatura": 57,
+    "email": "dep.jadyelalencar@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220697.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 74848,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74848",
+    "nome": "Jandira Feghali",
+    "siglaPartido": "PCdoB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36779",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.jandirafeghali@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74848.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2024-03-12"
+  },
+  {
+   "parlamentar": {
+    "id": 74141,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74141",
+    "nome": "Josias Gomes",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74141.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-03-29"
+  },
+  {
+   "parlamentar": {
+    "id": 220640,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220640",
+    "nome": "Juliana Cardoso",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.julianacardoso@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220640.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-25"
+  },
+  {
+   "parlamentar": {
+    "id": 74156,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74156",
+    "nome": "Leonardo Monteiro",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.leonardomonteiro@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74156.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-12"
+  },
+  {
+   "parlamentar": {
+    "id": 188097,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/188097",
+    "nome": "Merlong Solano",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "PI",
+    "idLegislatura": 57,
+    "email": "dep.merlongsolano@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/188097.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-09-13"
+  },
+  {
+   "parlamentar": {
+    "id": 74160,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74160",
+    "nome": "Patrus Ananias",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.patrusananias@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74160.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-05-16"
+  },
+  {
+   "parlamentar": {
+    "id": 171617,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/171617",
+    "nome": "Paulão",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "AL",
+    "idLegislatura": 57,
+    "email": "dep.paulao@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/171617.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-03-20"
+  },
+  {
+   "parlamentar": {
+    "id": 220606,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220606",
+    "nome": "Reimont",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": "dep.reimont@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220606.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-05-31"
+  },
+  {
+   "parlamentar": {
+    "id": 160610,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160610",
+    "nome": "Valmir Assunção",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.valmirassuncao@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160610.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-04-18"
+  },
+  {
+   "parlamentar": {
+    "id": 220601,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220601",
+    "nome": "Washington Quaquá",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "RJ",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220601.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-09",
+   "dataFim": "2023-03-27"
+  },
+  {
+   "parlamentar": {
+    "id": 220576,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220576",
+    "nome": "Alfredo Gaspar",
+    "siglaPartido": "PL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+    "siglaUf": "AL",
+    "idLegislatura": 57,
+    "email": "dep.alfredogaspar@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220576.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220608,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220608",
+    "nome": "Cristiane Lopes",
+    "siglaPartido": "PODE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36896",
+    "siglaUf": "RO",
+    "idLegislatura": 57,
+    "email": "dep.cristianelopes@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220608.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 62881,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/62881",
+    "nome": "Danilo Forte",
+    "siglaPartido": "PP",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37903",
+    "siglaUf": "CE",
+    "idLegislatura": 57,
+    "email": "dep.daniloforte@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/62881.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 74554,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74554",
+    "nome": "José Rocha",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.joserocha@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74554.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 204536,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204536",
+    "nome": "Kim Kataguiri",
+    "siglaPartido": "MISSÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38011",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.kimkataguiri@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204536.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 141485,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/141485",
+    "nome": "Luiz Carlos Busato",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.luizcarlosbusato@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/141485.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 74428,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74428",
+    "nome": "Mendonça Filho",
+    "siglaPartido": "PL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.mendoncafilho@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74428.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220564,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220564",
+    "nome": "Yandra Moura",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "SE",
+    "idLegislatura": 57,
+    "email": "dep.yandramoura@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220564.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220623,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220623",
+    "nome": "Duda Salabert",
+    "siglaPartido": "PSOL",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36839",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": "dep.dudasalabert@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220623.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220687,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220687",
+    "nome": "Márcio Honaiser",
+    "siglaPartido": "SOLIDARIEDADE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37904",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.marciohonaiser@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220687.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 204486,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204486",
+    "nome": "Mauro Benevides Filho",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "CE",
+    "idLegislatura": 57,
+    "email": "dep.maurobenevidesfilho@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204486.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-12"
+  },
+  {
+   "parlamentar": {
+    "id": 80815,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/80815",
+    "nome": "Leo Prates",
+    "siglaPartido": "REPUBLICANOS",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.leoprates@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/80815.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 178835,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178835",
+    "nome": "Afonso Motta",
+    "siglaPartido": "PDT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786",
+    "siglaUf": "RS",
+    "idLegislatura": 57,
+    "email": "dep.afonsomotta@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178835.jpgmaior.jpg"
+   },
+   "titulo": "1º Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PDT",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36786"
+   },
+   "dataInicio": "2023-03-14",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 204394,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204394",
+    "nome": "Gervásio Maia",
+    "siglaPartido": "PCdoB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36779",
+    "siglaUf": "PB",
+    "idLegislatura": 57,
+    "email": "dep.gervasiomaia@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204394.jpgmaior.jpg"
+   },
+   "titulo": "1º Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 220686,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220686",
+    "nome": "Duarte Jr.",
+    "siglaPartido": "AVANTE",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36898",
+    "siglaUf": "MA",
+    "idLegislatura": 57,
+    "email": "dep.duartejr@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220686.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-03-23"
+  },
+  {
+   "parlamentar": {
+    "id": 204534,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/204534",
+    "nome": "Tabata Amaral",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.tabataamaral@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/204534.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-04-11"
+  },
+  {
+   "parlamentar": {
+    "id": 220667,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/220667",
+    "nome": "Pedro Campos",
+    "siglaPartido": "PSB",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832",
+    "siglaUf": "PE",
+    "idLegislatura": 57,
+    "email": "dep.pedrocampos@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/220667.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "PSB",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/36832"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-03-22"
+  },
+  {
+   "parlamentar": {
+    "id": 178972,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178972",
+    "nome": "Alex Manente",
+    "siglaPartido": "CIDADANIA",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37905",
+    "siglaUf": "SP",
+    "idLegislatura": 57,
+    "email": "dep.alexmanente@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178972.jpgmaior.jpg"
+   },
+   "titulo": "1º Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSDB CIDADANIA",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/585"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 178966,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/178966",
+    "nome": "Geovania de Sá",
+    "siglaPartido": "REPUBLICANOS",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37908",
+    "siglaUf": "SC",
+    "idLegislatura": 57,
+    "email": "dep.geovaniadesa@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/178966.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação PSDB CIDADANIA",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/585"
+   },
+   "dataInicio": "2023-03-15",
+   "dataFim": "2023-04-19"
+  },
+  {
+   "parlamentar": {
+    "id": 74159,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/74159",
+    "nome": "Odair Cunha",
+    "siglaPartido": "PT",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36844",
+    "siglaUf": "MG",
+    "idLegislatura": 57,
+    "email": null,
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/74159.jpgmaior.jpg"
+   },
+   "titulo": "1º Vice-Líder",
+   "bancada": {
+    "tipo": "Bloco Parlamentar",
+    "nome": "Federação Brasil da Esperança - Fe Brasil",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/blocos/584"
+   },
+   "dataInicio": "2023-03-20",
+   "dataFim": "2023-05-02"
+  },
+  {
+   "parlamentar": {
+    "id": 160600,
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160600",
+    "nome": "Arthur Oliveira Maia",
+    "siglaPartido": "UNIÃO",
+    "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009",
+    "siglaUf": "BA",
+    "idLegislatura": 57,
+    "email": "dep.arthuroliveiramaia@camara.leg.br",
+    "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160600.jpgmaior.jpg"
+   },
+   "titulo": "Vice-Líder",
+   "bancada": {
+    "tipo": "Partido Político",
+    "nome": "UNIÃO",
+    "uri": "https://dadosabertos.camara.leg.br/api/v2/partidos/38009"
+   },
+   "dataInicio": "2023-03-21",
+   "dataFim": "2023-04-19"
+  }
+ ],
+ "links": []
+}

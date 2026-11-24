@@ -1,0 +1,62 @@
+# CI for DIOGENES. Each job is a separate status check.
+# The toolchain comes from rust-toolchain.toml. Builds use the committed Cargo.lock.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fmt
+        run: cargo fmt --all -- --check
+
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+      - name: clippy (deny warnings)
+        run: cargo clippy --locked --all-targets -- -D warnings
+
+  js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: syntax check of the page script
+        run: node --check src/web/app.js
+      - name: no innerHTML with data in the page script
+        run: "! grep -n 'innerHTML\\s*=' src/web/app.js"
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: ci
+          # C collation: the production collation.
+          POSTGRES_INITDB_ARGS: "--locale=C"
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgres://postgres:ci@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - name: all tests with line coverage (minimum 90%)
+        run: cargo llvm-cov --locked --fail-under-lines 90 -- --include-ignored
