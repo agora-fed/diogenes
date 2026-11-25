@@ -35,6 +35,10 @@ The Receita Federal publishes the CNPJ register as open data, one set each month
    digits with the name, so the column adds no new personal data. The API never sends it.
 3. Two donors with the same name and the same six digits are ambiguous. The job does not
    link them, and counts them in the check `ambiguous_donors`.
+   The sixth of the six digits is the fiscal region of the CPF, so two people with the same
+   name in the same region share it. For each link the job counts the other people with
+   the same name in the partner file (other six digits): `namesakes` (migration 0005).
+   The page shows this number, so a reader can see when the name is common.
 4. The job also finds the companies of each deputy in office: civil name and CPF from the
    Câmara API, in memory only.
 5. The job reads the parts as streams from the HTTP body. It reads the local ZIP header,
@@ -49,7 +53,8 @@ The Receita Federal publishes the CNPJ register as open data, one set each month
 8. A donations import gives new donor keys (ADR-0009). The foreign key removes the donor
    links. The operator runs `companies` again after each `donations` run.
 9. Configuration: `DIOGENES_RFB_CNPJ_URL` (WebDAV root), `DIOGENES_RFB_CNPJ_SHARE` (the
-   public share token, sent as the user name) and `DIOGENES_RFB_CNPJ_MONTH` (`YYYY-MM`).
+   token of the public share on the Receita server, sent as the user name; a third-party
+   mirror page showed it, and on 2026-11-25 it served the Receita files) and `DIOGENES_RFB_CNPJ_MONTH` (`YYYY-MM`).
    Without a month, the job reads the last month of the share.
 10. API: the campaign of a deputy gives the companies of each donor (at most 5) and the
     companies of the deputy. The money of a scenario gives the companies of each shared
@@ -69,6 +74,11 @@ The Receita Federal publishes the CNPJ register as open data, one set each month
   - a former partner is not found;
   - the job does not follow a holding to the companies that it owns;
   - two different people with the same name and the same six digits give a false link.
-    This is rare, but possible.
-- The share token comes from the Receita page. If the Receita moves the files, the operator
-  sets the new location with the environment variables.
+    The risk grows with the number of namesakes, which the page shows. A spot check of
+    common names on the first import (2026-11-25) found companies in one state and one
+    activity for each donor, as for one person.
+- If the Receita moves the files, the operator sets the new location with the environment
+  variables.
+- The partner file also lists administrators, directors and board members (for example, a
+  deputy on the board of a state company). The page says "sócio ou administrador" and shows
+  the role.

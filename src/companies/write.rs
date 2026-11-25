@@ -99,8 +99,10 @@ pub async fn write(db: &PgPool, found: &Found, month: &str, url: &str) -> Result
     .await?;
     let known: HashSet<&String> = found.companies.keys().collect();
     let mut seen = HashSet::new();
-    let (mut d_keys, mut d_cnpj, mut d_role, mut d_since) = (vec![], vec![], vec![], vec![]);
-    let (mut p_ids, mut p_cnpj, mut p_role, mut p_since) = (vec![], vec![], vec![], vec![]);
+    let (mut d_keys, mut d_cnpj, mut d_role, mut d_since, mut d_names) =
+        (vec![], vec![], vec![], vec![], vec![]);
+    let (mut p_ids, mut p_cnpj, mut p_role, mut p_since, mut p_names) =
+        (vec![], vec![], vec![], vec![], vec![]);
     for link in &found.links {
         if !known.contains(&link.cnpj_basico) || !seen.insert((&link.target, &link.cnpj_basico)) {
             continue;
@@ -116,20 +118,24 @@ pub async fn write(db: &PgPool, found: &Found, month: &str, url: &str) -> Result
                 d_cnpj.push(link.cnpj_basico.as_str());
                 d_role.push(role);
                 d_since.push(link.since);
+                d_names.push(link.namesakes);
             }
             Target::Deputy(id) => {
                 p_ids.push(*id);
                 p_cnpj.push(link.cnpj_basico.as_str());
                 p_role.push(role);
                 p_since.push(link.since);
+                p_names.push(link.namesakes);
             }
         }
     }
     // A donor that a new donations import removed has no row: the join skips the link.
     sqlx::query(
-        "INSERT INTO diogenes_donor_company (election_year, donor_key, cnpj_basico, role, since)
-         SELECT $1, l.k, l.c, l.r, l.s
-           FROM UNNEST($2::text[], $3::text[], $4::text[], $5::date[]) AS l(k, c, r, s)
+        "INSERT INTO diogenes_donor_company
+                (election_year, donor_key, cnpj_basico, role, since, namesakes)
+         SELECT $1, l.k, l.c, l.r, l.s, l.n
+           FROM UNNEST($2::text[], $3::text[], $4::text[], $5::date[], $6::int[])
+                AS l(k, c, r, s, n)
            JOIN diogenes_donor d ON d.election_year = $1 AND d.key = l.k",
     )
     .bind(ELECTION_YEAR)
@@ -137,18 +143,21 @@ pub async fn write(db: &PgPool, found: &Found, month: &str, url: &str) -> Result
     .bind(&d_cnpj)
     .bind(&d_role)
     .bind(&d_since)
+    .bind(&d_names)
     .execute(&mut *tx)
     .await?;
     sqlx::query(
-        "INSERT INTO diogenes_deputy_company (camara_id, cnpj_basico, role, since)
-         SELECT l.i, l.c, l.r, l.s
-           FROM UNNEST($1::int[], $2::text[], $3::text[], $4::date[]) AS l(i, c, r, s)
+        "INSERT INTO diogenes_deputy_company (camara_id, cnpj_basico, role, since, namesakes)
+         SELECT l.i, l.c, l.r, l.s, l.n
+           FROM UNNEST($1::int[], $2::text[], $3::text[], $4::date[], $5::int[])
+                AS l(i, c, r, s, n)
            JOIN diogenes_deputy d ON d.camara_id = l.i",
     )
     .bind(&p_ids)
     .bind(&p_cnpj)
     .bind(&p_role)
     .bind(&p_since)
+    .bind(&p_names)
     .execute(&mut *tx)
     .await?;
     sqlx::query(

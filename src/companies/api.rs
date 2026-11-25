@@ -78,10 +78,12 @@ pub struct CompanyView {
     pub role: String,
     /// The date when the person became a partner.
     pub since: Option<NaiveDate>,
+    /// The other people with the same name in the partner file (other six CPF digits).
+    pub namesakes: i32,
 }
 
 const COMPANY_COLUMNS: &str = "c.cnpj_basico, c.name, c.trade_name, c.cnae_text, c.status, c.uf,
-    c.city, c.capital_cents, l.role, l.since";
+    c.city, c.capital_cents, l.role, l.since, l.namesakes";
 
 /// The companies of some donors, active companies and the largest capital first.
 /// Returns (key → companies, at most `per_donor`) and (key → number of companies).
@@ -231,7 +233,8 @@ pub struct CampaignRow {
     pub photo_url: Option<String>,
     /// All receipts, in cents.
     pub total_cents: i64,
-    /// The money of people (directly, and through a party), in cents.
+    /// The donations of people straight to the campaign, in cents (source `individuals`,
+    /// the same value as in the campaign of the deputy).
     pub people_cents: i64,
     /// The donors that are partners of a company.
     pub donors_with_companies: i64,
@@ -259,10 +262,9 @@ pub async fn list(State(state): State<DiogenesState>) -> ApiResult<Json<Envelope
                 COALESCE((SELECT sum(t.cents) FROM diogenes_campaign_total t
                            WHERE t.election_year = $1 AND t.camara_id = d.camara_id), 0)::bigint
                     AS total_cents,
-                COALESCE((SELECT sum(n.cents) FROM diogenes_donation n
-                           JOIN diogenes_donor o ON o.election_year = n.election_year
-                                                AND o.key = n.donor_key AND o.kind = 'person'
-                           WHERE n.election_year = $1 AND n.camara_id = d.camara_id), 0)::bigint
+                COALESCE((SELECT sum(t.cents) FROM diogenes_campaign_total t
+                           WHERE t.election_year = $1 AND t.camara_id = d.camara_id
+                             AND t.source = 'individuals'), 0)::bigint
                     AS people_cents,
                 (SELECT count(DISTINCT n.donor_key) FROM diogenes_donation n
                    JOIN diogenes_donor_company l ON l.election_year = n.election_year

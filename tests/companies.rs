@@ -50,7 +50,7 @@ fn tse_archive() -> Vec<u8> {
     writer.write_all(&l1("DS_CARGO;NR_CPF_CANDIDATO;SQ_RECEITA;DS_ORIGEM_RECEITA;NR_CPF_CNPJ_DOADOR;NM_DOADOR;DS_CNAE_DOADOR;SG_UF_DOADOR;VR_RECEITA\n\
 Deputado Federal;11111111111;10;Recursos de pessoas físicas;12377777701;JOSÉ  DOADOR;#NULO;SP;1000,00\n\
 Deputado Federal;33333333333;11;Recursos de pessoas físicas;12377777701;JOSÉ  DOADOR;#NULO;SP;500,00\n\
-Deputado Federal;22222222222;13;Recursos de pessoas físicas;98788888801;ANA;#NULO;RJ;50,00\n\
+Deputado Federal;22222222222;13;Recursos de pessoas físicas;98788888801;ANA;#NULO#;#NULO#;50,00\n\
 Deputado Federal;22222222222;14;Recursos de pessoas físicas;55566666601;JOAO HOMONIMO;#NULO;RJ;20,00\n\
 Deputado Federal;22222222222;15;Recursos de pessoas físicas;44466666601;JOAO HOMONIMO;#NULO;RJ;30,00\n")).unwrap();
     writer.start_file(ORIGINAL_DONORS_FILE, options).unwrap();
@@ -67,6 +67,7 @@ fn receita(file: &str) -> Option<Vec<u8>> {
         "Socios0.zip" => deflated(
             "K.SOCIOCSV",
             "\"11111111\";\"2\";\"JOSE DOADOR\";\"***777777**\";\"49\";\"20100105\";\"\";\"***000000**\";\"\";\"00\";\"6\"\n\
+\"55555555\";\"2\";\"JOSE DOADOR\";\"***123456**\";\"22\";\"0\";\"\";\"\";\"\";\"00\";\"0\"\n\
 \"11111111\";\"2\";\"ANA\";\"***888889**\";\"22\";\"20100105\";\"\";\"***000000**\";\"\";\"00\";\"6\"\n\
 \"22222222\";\"2\";\"PESSOA UM\";\"***111111**\";\"22\";\"0\";\"\";\"***000000**\";\"\";\"00\";\"5\"\n\
 \"33333333\";\"1\";\"HOLDING SA\";\"11111111000191\";\"22\";\"20000101\";\"\";\"\";\"\";\"00\";\"0\"\n\
@@ -239,6 +240,13 @@ async fn companies_of_donors_and_deputies() {
             .await
             .unwrap();
     assert_eq!(parts, ["777777"]);
+    // The TSE writes an empty value as `#NULO#` too.
+    let ana: (Option<String>, Option<String>) =
+        sqlx::query_as("SELECT uf, activity FROM diogenes_donor WHERE name = 'ANA'")
+            .fetch_one(&db)
+            .await
+            .unwrap();
+    assert_eq!(ana, (None, None));
 
     run_job(&db, &client, &cfg, Job::Companies)
         .await
@@ -283,6 +291,7 @@ async fn companies_of_donors_and_deputies() {
     assert_eq!(company["city"], "SORRISO");
     assert_eq!(company["since"], "2010-01-05");
     assert_eq!(company["capital_cents"], 500_000_000);
+    assert_eq!(company["namesakes"], 1, "one other JOSE DOADOR in the partner file");
     assert!(
         jose.get("cpf_part").is_none(),
         "the API never sends the CPF digits"
@@ -297,6 +306,7 @@ async fn companies_of_donors_and_deputies() {
         ),
         (Some("CONSULTORIA UM LTDA"), Some("Sócio"), Some("unknown"))
     );
+    assert_eq!(own[0]["namesakes"], 0);
     let (s, list) = call(&app, "GET", "/diogenes/campaigns", None, None).await;
     assert_eq!(s, StatusCode::OK);
     let rows = list["data"]["deputies"].as_array().unwrap();

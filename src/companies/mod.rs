@@ -30,7 +30,8 @@ use parse::{CnpjError, Company, Counts, HeadOffice, Partner};
 
 /// The WebDAV root of the public share of the Receita.
 pub const DEFAULT_BASE: &str = "https://arquivos.receitafederal.gov.br/public.php/webdav";
-/// The token of the public share. It is public: the Receita page links to it.
+/// The token of the public share on the Receita server, where the CNPJ files are
+/// (checked on 2026-11-25). If the Receita moves the files, set `DIOGENES_RFB_CNPJ_SHARE`.
 pub const DEFAULT_SHARE: &str = "YggdBLfdninEJX9";
 /// The public page of the data set.
 pub const SOURCE_PAGE: &str =
@@ -204,6 +205,7 @@ pub enum Target {
 #[derive(Debug, Default)]
 pub struct Targets {
     by_key: HashMap<(String, String), Vec<Target>>,
+    names: HashSet<String>,
     /// The keys that have two or more donors.
     pub ambiguous: usize,
 }
@@ -237,17 +239,26 @@ impl Targets {
                 }
             }
         }
+        let names = by_key.keys().map(|(n, _)| n.clone()).collect();
         Self {
             by_key,
+            names,
             ambiguous: ambiguous_keys.len(),
         }
     }
 
-    /// The targets of one partner row.
+    /// The normalized name of a partner, when a target has this name.
     #[must_use]
-    pub fn find(&self, partner: &Partner) -> &[Target] {
+    pub fn known_name(&self, partner: &Partner) -> Option<String> {
+        let name = normalize(&partner.name);
+        self.names.contains(&name).then_some(name)
+    }
+
+    /// The targets with this normalized name and these six digits.
+    #[must_use]
+    pub fn find(&self, name: &str, cpf_part: &str) -> &[Target] {
         self.by_key
-            .get(&(normalize(&partner.name), partner.cpf_part.clone()))
+            .get(&(name.to_owned(), cpf_part.to_owned()))
             .map_or(&[], Vec::as_slice)
     }
 }
@@ -263,7 +274,17 @@ pub struct Link {
     pub role: String,
     /// The entry date.
     pub since: Option<NaiveDate>,
+    /// The other people with the same name in the partner file.
+    pub namesakes: i32,
 }
+
+/// The state of the pass over the partner files: the targets, the links found (with the
+/// normalized name), and the six digits of all people with a target name.
+type PartnerPass = (
+    Targets,
+    Vec<(String, Link)>,
+    HashMap<String, HashSet<String>>,
+);
 
 /// All rows that the job writes.
 #[derive(Debug, Default)]
@@ -308,34 +329,46 @@ pub async fn read_month(
 ) -> Result<Found, JobError> {
     let mut found = Found::default();
     let part = |name: &str| source.url(&format!("{month}/{name}.zip"));
-    let mut targets = targets;
+    // (name → the six digits of all people with this name), to count the namesakes.
+    let mut state: PartnerPass = (targets, Vec::new(), HashMap::new());
     for i in 0..PARTS {
-        let (t, links, counts) = {
-            let ((t, links), counts) = read_part(
-                http,
-                source,
-                part(&format!("Socios{i}")),
-                (targets, Vec::new()),
-                |(t, links): &mut (Targets, Vec<Link>), row| {
-                    let Some(p) = parse::partner(row) else { return };
-                    for target in t.find(&p) {
-                        links.push(Link {
+        let (s, counts) = read_part(
+            http,
+            source,
+            part(&format!("Socios{i}")),
+            state,
+            |(t, links, people): &mut PartnerPass, row| {
+                let Some(p) = parse::partner(row) else { return };
+                let Some(name) = t.known_name(&p) else { return };
+                for target in t.find(&name, &p.cpf_part) {
+                    links.push((
+                        name.clone(),
+                        Link {
                             target: target.clone(),
                             cnpj_basico: p.cnpj_basico.clone(),
                             role: p.role.clone(),
                             since: p.since,
-                        });
-                    }
-                },
-            )
-            .await?;
-            (t, links, counts)
-        };
-        targets = t;
-        found.links.extend(links);
+                            namesakes: 0,
+                        },
+                    ));
+                }
+                people.entry(name).or_default().insert(p.cpf_part);
+            },
+        )
+        .await?;
+        state = s;
         found.files += 1;
         found.rejected += counts.rejected;
     }
+    let (_, links, people) = state;
+    found.links = links
+        .into_iter()
+        .map(|(name, mut link)| {
+            let others = people.get(&name).map_or(1, HashSet::len).saturating_sub(1);
+            link.namesakes = i32::try_from(others).unwrap_or(i32::MAX);
+            link
+        })
+        .collect();
     let wanted = std::sync::Arc::new(found.wanted());
     for i in 0..PARTS {
         let w = wanted.clone();

@@ -9,7 +9,8 @@ The versions follow Semantic Versioning.
 
 - Companies of the donors and of the deputies from the Receita Federal CNPJ open data: the
   sync job `companies` (operator only, after `donations`), the companies in the campaign of
-  a deputy, and the shared donors and the sectors of a scenario (ADR-0010, migration 0004).
+  a deputy, and the shared donors and the sectors of a scenario (ADR-0010, migrations 0004
+  and 0005). Each link has the number of namesakes in the partner file.
 - `GET /diogenes/campaigns`: the deputies in office with the total of their campaign.
 - Campaign finance from the TSE (2022) for the deputies in office: the sync job `donations`
   (operator only), totals by source, donors (with the original donors of party money), and
@@ -27,6 +28,7 @@ The versions follow Semantic Versioning.
 
 ### Fixed
 
+- The TSE writes an empty value as `#NULO#` too. The donor state and activity showed it.
 - A sync job now frees its advisory lock when the database refuses the run row.
   Before, the lock stayed on a pooled connection until the process ended.
 

@@ -15,7 +15,7 @@ pub const RECEIPTS_FILE: &str = "receitas_candidatos_2022_BRASIL.csv";
 /// The national original-donor file in the archive.
 pub const ORIGINAL_DONORS_FILE: &str = "receitas_candidatos_doador_originario_2022_BRASIL.csv";
 const OFFICE: &str = "DEPUTADO FEDERAL";
-/// The TSE marks an empty value with this text.
+/// The TSE marks an empty value with this text (also written `#NULO#`).
 const NULL: &str = "#NULO";
 
 /// Where the money of a receipt comes from.
@@ -171,7 +171,7 @@ fn latin1(bytes: &[u8]) -> String {
 
 fn value(s: String) -> Option<String> {
     let t = s.trim();
-    (!t.is_empty() && t != NULL && t != "-1").then(|| t.to_owned())
+    (!t.is_empty() && !t.starts_with(NULL) && t != "-1").then(|| t.to_owned())
 }
 
 /// A streaming reader of one TSE CSV with a column map.
