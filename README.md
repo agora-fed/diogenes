@@ -20,7 +20,9 @@ DIOGENES has two parts.
 - the 513 deputies in office, with party, state and photo;
 - parliamentary fronts and their members;
 - caucuses: women, self-declared Black and brown (TSE 2022), current leaders, the board;
-- plenary roll calls, with each vote, the party orientations and the bill.
+- plenary roll calls, with each vote, the party orientations and the bill;
+- the 2022 campaign accounts of each deputy (TSE): money by source and donors. An operator
+  starts this import by hand (ADR-0009).
 
 Each sync run checks the stored data against the totals that the source publishes.
 `GET /diogenes/sync/status` shows the result.

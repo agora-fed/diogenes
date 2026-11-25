@@ -5,6 +5,7 @@
 //! * `deputies`: deputies in office, details, parties, TSE colour/race.
 //! * `groups`: fronts and members, caucuses (women, Black and brown, leaders, board).
 //! * `roll_calls`: plenary roll calls with votes, orientations and bills.
+//! * `donations`: campaign finance of the deputies in office (TSE). Only an operator starts it.
 //!
 //! Each run writes one row in `diogenes_sync_run`, with the checks against the official
 //! totals. A check that fails gives the status `warning`, not `failed`: the data is still
@@ -64,11 +65,18 @@ pub enum Job {
     Groups,
     /// Plenary roll calls.
     RollCalls,
+    /// Campaign finance of the deputies in office (TSE). Only an operator starts it.
+    Donations,
 }
 
 impl Job {
     /// All jobs, in dependency order.
-    pub const ALL: [Self; 3] = [Self::Deputies, Self::Groups, Self::RollCalls];
+    pub const ALL: [Self; 4] = [
+        Self::Deputies,
+        Self::Groups,
+        Self::RollCalls,
+        Self::Donations,
+    ];
 
     /// The name of the job.
     #[must_use]
@@ -77,6 +85,7 @@ impl Job {
             Self::Deputies => "deputies",
             Self::Groups => "groups",
             Self::RollCalls => "roll_calls",
+            Self::Donations => "donations",
         }
     }
 
@@ -92,6 +101,7 @@ impl Job {
             Self::Deputies => 0x0044_494F_0001,
             Self::Groups => 0x0044_494F_0002,
             Self::RollCalls => 0x0044_494F_0003,
+            Self::Donations => 0x0044_494F_0004,
         }
     }
 }
@@ -107,6 +117,8 @@ pub struct SyncConfig {
     pub reference_every: Duration,
     /// True to import colour/race from the TSE.
     pub tse_enabled: bool,
+    /// The TSE campaign-finance archive of the `donations` job.
+    pub finance_url: String,
 }
 
 impl SyncConfig {
@@ -114,7 +126,8 @@ impl SyncConfig {
     /// `DIOGENES_ROLL_CALLS_SINCE` (YYYY-MM-DD, default: 180 days ago),
     /// `DIOGENES_ROLL_CALLS_EVERY_MIN` (default 60),
     /// `DIOGENES_REFERENCE_EVERY_HOURS` (default 24),
-    /// `DIOGENES_TSE_ENABLED` (default true).
+    /// `DIOGENES_TSE_ENABLED` (default true),
+    /// `DIOGENES_TSE_FINANCE_URL` (default: the 2022 archive of the TSE).
     #[must_use]
     pub fn from_env() -> Self {
         Self::from_lookup(|name| std::env::var(name).ok())
@@ -135,6 +148,8 @@ impl SyncConfig {
             roll_calls_every: Duration::from_secs(minutes.max(5) * 60),
             reference_every: Duration::from_secs(hours.max(1) * 3600),
             tse_enabled,
+            finance_url: lookup("DIOGENES_TSE_FINANCE_URL")
+                .unwrap_or_else(|| crate::finance::FINANCE_2022_URL.to_owned()),
         }
     }
 }
@@ -176,6 +191,7 @@ pub async fn run_job(
         Job::Deputies => deputies::run(db, client, config.tse_enabled).await,
         Job::Groups => groups::run(db, client).await,
         Job::RollCalls => roll_calls::run(db, client, config.roll_calls_since).await,
+        Job::Donations => crate::finance::run(db, client, &config.finance_url).await,
     };
     let (status, items, checks, error) = match result {
         Ok(report) => {

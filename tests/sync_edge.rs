@@ -25,7 +25,12 @@ use serde_json::{json, Value};
 use uuid::Uuid;
 
 /// The advisory-lock keys of the jobs (see `Job::lock_key`): "DIO" and the job number.
-const LOCK_KEYS: [i64; 3] = [0x0044_494F_0001, 0x0044_494F_0002, 0x0044_494F_0003];
+const LOCK_KEYS: [i64; 4] = [
+    0x0044_494F_0001,
+    0x0044_494F_0002,
+    0x0044_494F_0003,
+    0x0044_494F_0004,
+];
 
 type Handler = Arc<dyn Fn(&str, &str) -> Response + Send + Sync>;
 
@@ -68,6 +73,7 @@ fn config(since: NaiveDate) -> SyncConfig {
         roll_calls_every: Duration::from_secs(3600),
         reference_every: Duration::from_secs(3600),
         tse_enabled: false,
+        finance_url: String::new(),
     }
 }
 

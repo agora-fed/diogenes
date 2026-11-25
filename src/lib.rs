@@ -13,6 +13,7 @@
 
 pub mod camara;
 pub mod error;
+pub mod finance;
 pub mod identity;
 pub mod migrate;
 pub mod reference;
@@ -68,6 +69,7 @@ pub fn api_router(state: DiogenesState) -> Router<()> {
         .merge(reference::routes())
         .merge(room::routes())
         .merge(sync::routes())
+        .merge(finance::api::routes())
         .layer(axum::extract::DefaultBodyLimit::max(MAX_BODY_BYTES))
         .layer(axum::middleware::map_response(no_store))
         .with_state(state)

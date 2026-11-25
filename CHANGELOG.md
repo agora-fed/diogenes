@@ -7,6 +7,10 @@ The versions follow Semantic Versioning.
 
 ### Added
 
+- Campaign finance from the TSE (2022) for the deputies in office: the sync job `donations`
+  (operator only), totals by source, donors (with the original donors of party money), and
+  the donors that a scenario shares across its columns. No CPF or CNPJ is stored
+  (ADR-0009, migration 0003).
 - The approval rule of a project: `fixed` (a number of votes) or `simple` (more "yes" than
   "no", with a quorum). The kind of the bill sets the default: PEC 308, PLP 257, other
   kinds simple majority (ADR-0008, migration 0002).

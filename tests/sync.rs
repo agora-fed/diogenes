@@ -151,6 +151,7 @@ async fn sync_jobs_store_reference_data_and_checks() {
         roll_calls_every: std::time::Duration::from_secs(3600),
         reference_every: std::time::Duration::from_secs(3600),
         tse_enabled: false,
+        finance_url: String::new(),
     };
 
     // --- deputies ---
@@ -267,6 +268,7 @@ async fn groups_job_skips_a_front_that_fails_and_reports_it() {
         roll_calls_every: std::time::Duration::from_secs(3600),
         reference_every: std::time::Duration::from_secs(3600),
         tse_enabled: false,
+        finance_url: String::new(),
     };
     run_job(&db, &client, &config, Job::Deputies)
         .await
