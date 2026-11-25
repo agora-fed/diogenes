@@ -378,3 +378,39 @@ async fn deputies_job_joins_the_tse_races_by_cpf() {
             .unwrap();
     assert_eq!(kept.as_deref(), Some("PARDA"));
 }
+
+#[tokio::test]
+#[ignore = "needs DATABASE_URL"]
+async fn a_job_frees_its_lock_when_the_run_cannot_be_recorded() {
+    let _guard = SERIAL.lock().await;
+    let db = db().await;
+    let (client, _) = start_fake(|_, _| StatusCode::NOT_FOUND.into_response()).await;
+    // Make the INSERT of the run row fail.
+    sqlx::raw_sql("ALTER TABLE diogenes_sync_run RENAME TO diogenes_sync_run_off")
+        .execute(&db)
+        .await
+        .unwrap();
+
+    let result = run_job(&db, &client, &config(Utc::now().date_naive()), Job::Groups).await;
+
+    sqlx::raw_sql("ALTER TABLE diogenes_sync_run_off RENAME TO diogenes_sync_run")
+        .execute(&db)
+        .await
+        .unwrap();
+    assert!(result.is_err(), "the run row cannot be written");
+    // Another session must get the lock: the failed run must not keep it on a pooled connection.
+    let other = sqlx::PgPool::connect(&std::env::var("DATABASE_URL").unwrap())
+        .await
+        .unwrap();
+    let mut conn = other.acquire().await.unwrap();
+    let free: bool = sqlx::query_scalar("SELECT pg_try_advisory_lock($1)")
+        .bind(LOCK_KEYS[1])
+        .fetch_one(&mut *conn)
+        .await
+        .unwrap();
+    sqlx::query("SELECT pg_advisory_unlock_all()")
+        .execute(&mut *conn)
+        .await
+        .unwrap();
+    assert!(free, "the job lock is still held by the pool");
+}

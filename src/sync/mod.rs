@@ -159,11 +159,19 @@ pub async fn run_job(
         tracing::info!(job = job.name(), "diogenes sync already running elsewhere");
         return Ok(None);
     }
-    let run_id: i64 =
+    let inserted: Result<i64, sqlx::Error> =
         sqlx::query_scalar("INSERT INTO diogenes_sync_run (job) VALUES ($1) RETURNING id")
             .bind(job.name())
             .fetch_one(db)
-            .await?;
+            .await;
+    let run_id = match inserted {
+        Ok(id) => id,
+        Err(err) => {
+            // The connection goes back to the pool. It must not keep the lock.
+            unlock(&mut lock_conn, job).await;
+            return Err(err);
+        }
+    };
     let result = match job {
         Job::Deputies => deputies::run(db, client, config.tse_enabled).await,
         Job::Groups => groups::run(db, client).await,
@@ -195,13 +203,21 @@ pub async fn run_job(
     .bind(error)
     .execute(db)
     .await;
-    let _unlock = sqlx::query("SELECT pg_advisory_unlock($1)")
-        .bind(job.lock_key())
-        .execute(&mut *lock_conn)
-        .await;
+    unlock(&mut lock_conn, job).await;
     finish?;
     tracing::info!(job = job.name(), status, items, "diogenes sync finished");
     Ok(Some(run_id))
+}
+
+/// Release the advisory lock of a job on the connection that took it.
+async fn unlock(conn: &mut sqlx::PgConnection, job: Job) {
+    let released = sqlx::query("SELECT pg_advisory_unlock($1)")
+        .bind(job.lock_key())
+        .execute(conn)
+        .await;
+    if let Err(err) = released {
+        tracing::warn!(job = job.name(), error = %err, "diogenes sync cannot release its lock");
+    }
 }
 
 /// An error of a job.
