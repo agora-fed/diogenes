@@ -3,6 +3,21 @@
 All changes to DIOGENES are in this file. The format follows Keep a Changelog.
 The versions follow Semantic Versioning.
 
+## [Unreleased]
+
+### Fixed
+
+- A sync job now frees its advisory lock when the database refuses the run row.
+  Before, the lock stayed on a pooled connection until the process ended.
+
+### Changed
+
+- The CI gate for line coverage is now 95 percent (was 90).
+- New tests cover the Câmara client retries, the TSE import, the sync jobs and locks,
+  the scheduler, live-stream limits and the schema runner.
+- New function `sync::deputies::run_with_races`. It takes the colour/race map as an
+  argument. `sync::deputies::run` is unchanged.
+
 ## [0.1.0] - 2026-11-24
 
 ### Added

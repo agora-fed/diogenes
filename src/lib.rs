@@ -90,3 +90,32 @@ async fn no_store(mut response: axum::response::Response) -> axum::response::Res
 pub fn web_router() -> Router<()> {
     web::routes()
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    struct NoOne;
+
+    #[async_trait::async_trait]
+    impl Identity for NoOne {
+        async fn actor(&self, _parts: &axum::http::request::Parts) -> Option<Actor> {
+            None
+        }
+
+        async fn find_user(&self, _org_id: uuid::Uuid, _handle: &str) -> Option<UserRef> {
+            None
+        }
+    }
+
+    #[tokio::test]
+    async fn state_debug_output_hides_the_pool_and_the_identity() {
+        // A lazy pool opens no connection.
+        let pool = PgPool::connect_lazy("postgres://user:secret@[::1]:1/none")
+            .unwrap_or_else(|e| panic!("a lazy pool needs no server: {e}"));
+        let state = DiogenesState::new(pool, Arc::new(NoOne));
+        let text = format!("{state:?}");
+        assert_eq!(text, "DiogenesState { .. }");
+        assert!(!text.contains("secret"));
+    }
+}

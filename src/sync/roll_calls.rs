@@ -270,4 +270,45 @@ mod tests {
     fn windows_empty_when_since_is_after_until() {
         assert!(windows(date("2026-02-01"), date("2026-01-01")).is_empty());
     }
+
+    fn vote(kind: &str, id: i32) -> Vote {
+        Vote {
+            tipo_voto: kind.to_owned(),
+            deputado: crate::camara::dto::DeputySummary {
+                id,
+                nome: format!("D{id}"),
+                sigla_partido: None,
+                sigla_uf: None,
+                url_foto: None,
+                email: None,
+                titulo: None,
+            },
+        }
+    }
+
+    #[test]
+    fn totals_check_counts_abstentions_only_when_the_description_has_them() {
+        let votes = [vote("Sim", 1), vote("Não", 2), vote("Abstenção", 3)];
+        let without = DescribedTotals {
+            yes: Some(1),
+            no: Some(1),
+            abstention: None,
+        };
+        let with = DescribedTotals {
+            abstention: Some(1),
+            ..without
+        };
+
+        let check_without = totals_check("r", without, &votes);
+        let check_with = totals_check("r", with, &votes);
+
+        assert_eq!(check_without.subject, "roll_call:r");
+        assert!(
+            check_without.passed(),
+            "the abstention is not in the description"
+        );
+        assert_eq!((check_with.expected, check_with.actual), (3, 3));
+        let short = totals_check("r", with, &votes[..2]);
+        assert!(!short.passed());
+    }
 }

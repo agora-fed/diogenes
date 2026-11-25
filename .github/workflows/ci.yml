@@ -59,4 +59,4 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - uses: taiki-e/install-action@cargo-llvm-cov
       - name: all tests with line coverage (minimum 90%)
-        run: cargo llvm-cov --locked --fail-under-lines 90 -- --include-ignored
+        run: cargo llvm-cov --locked --fail-under-lines 95 -- --include-ignored
