@@ -117,13 +117,19 @@ impl SyncConfig {
     /// `DIOGENES_TSE_ENABLED` (default true).
     #[must_use]
     pub fn from_env() -> Self {
-        let since = std::env::var("DIOGENES_ROLL_CALLS_SINCE")
-            .ok()
+        Self::from_lookup(|name| std::env::var(name).ok())
+    }
+
+    /// Read the configuration from a lookup function. `from_env` uses the environment.
+    fn from_lookup(lookup: impl Fn(&str) -> Option<String>) -> Self {
+        let since = lookup("DIOGENES_ROLL_CALLS_SINCE")
             .and_then(|v| chrono::NaiveDate::parse_from_str(&v, "%Y-%m-%d").ok())
             .unwrap_or_else(|| chrono::Utc::now().date_naive() - chrono::Days::new(180));
-        let minutes = env_u64("DIOGENES_ROLL_CALLS_EVERY_MIN", 60);
-        let hours = env_u64("DIOGENES_REFERENCE_EVERY_HOURS", 24);
-        let tse_enabled = std::env::var("DIOGENES_TSE_ENABLED").map_or(true, |v| v != "false");
+        let number =
+            |name: &str, default: u64| lookup(name).and_then(|v| v.parse().ok()).unwrap_or(default);
+        let minutes = number("DIOGENES_ROLL_CALLS_EVERY_MIN", 60);
+        let hours = number("DIOGENES_REFERENCE_EVERY_HOURS", 24);
+        let tse_enabled = lookup("DIOGENES_TSE_ENABLED").map_or(true, |v| v != "false");
         Self {
             roll_calls_since: since,
             roll_calls_every: Duration::from_secs(minutes.max(5) * 60),
@@ -131,13 +137,6 @@ impl SyncConfig {
             tse_enabled,
         }
     }
-}
-
-fn env_u64(name: &str, default: u64) -> u64 {
-    std::env::var(name)
-        .ok()
-        .and_then(|v| v.parse().ok())
-        .unwrap_or(default)
 }
 
 /// Run one job and record the run. Return `None` when another process runs the same job.
@@ -303,8 +302,76 @@ async fn trigger(
 }
 
 #[cfg(test)]
+#[allow(clippy::unwrap_used, clippy::expect_used)]
 mod tests {
     use super::*;
+
+    fn lookup(pairs: &'static [(&'static str, &'static str)]) -> impl Fn(&str) -> Option<String> {
+        move |name| {
+            pairs
+                .iter()
+                .find(|(k, _)| *k == name)
+                .map(|(_, v)| (*v).to_owned())
+        }
+    }
+
+    #[test]
+    fn config_defaults_apply_when_nothing_is_set() {
+        let config = SyncConfig::from_lookup(lookup(&[]));
+        let expected_since = chrono::Utc::now().date_naive() - chrono::Days::new(180);
+        assert!(
+            config
+                .roll_calls_since
+                .signed_duration_since(expected_since)
+                .num_days()
+                .abs()
+                <= 1
+        );
+        assert_eq!(config.roll_calls_every, Duration::from_secs(60 * 60));
+        assert_eq!(config.reference_every, Duration::from_secs(24 * 3600));
+        assert!(config.tse_enabled);
+    }
+
+    #[test]
+    fn config_reads_the_values_that_are_set() {
+        let config = SyncConfig::from_lookup(lookup(&[
+            ("DIOGENES_ROLL_CALLS_SINCE", "2025-02-03"),
+            ("DIOGENES_ROLL_CALLS_EVERY_MIN", "15"),
+            ("DIOGENES_REFERENCE_EVERY_HOURS", "6"),
+            ("DIOGENES_TSE_ENABLED", "false"),
+        ]));
+        assert_eq!(
+            config.roll_calls_since,
+            chrono::NaiveDate::from_ymd_opt(2025, 2, 3).unwrap()
+        );
+        assert_eq!(config.roll_calls_every, Duration::from_secs(15 * 60));
+        assert_eq!(config.reference_every, Duration::from_secs(6 * 3600));
+        assert!(!config.tse_enabled);
+    }
+
+    #[test]
+    fn config_raises_too_small_intervals_and_ignores_bad_values() {
+        let config = SyncConfig::from_lookup(lookup(&[
+            ("DIOGENES_ROLL_CALLS_SINCE", "yesterday"),
+            ("DIOGENES_ROLL_CALLS_EVERY_MIN", "1"),
+            ("DIOGENES_REFERENCE_EVERY_HOURS", "0"),
+            ("DIOGENES_TSE_ENABLED", "yes"),
+        ]));
+        assert_eq!(config.roll_calls_every, Duration::from_secs(5 * 60));
+        assert_eq!(config.reference_every, Duration::from_secs(3600));
+        assert!(config.tse_enabled, "only the value `false` turns it off");
+        let bad_number =
+            SyncConfig::from_lookup(lookup(&[("DIOGENES_ROLL_CALLS_EVERY_MIN", "abc")]));
+        assert_eq!(bad_number.roll_calls_every, Duration::from_secs(60 * 60));
+    }
+
+    #[test]
+    fn config_from_env_has_the_same_defaults_as_an_empty_lookup() {
+        // The CI environment sets no DIOGENES_* variable.
+        let config = SyncConfig::from_env();
+        assert!(config.roll_calls_every >= Duration::from_secs(5 * 60));
+        assert!(config.reference_every >= Duration::from_secs(3600));
+    }
 
     #[test]
     fn job_names_round_trip() {
@@ -328,5 +395,7 @@ mod tests {
             actual: 3,
         };
         assert!(c.passed());
+        let off = Check { actual: 4, ..c };
+        assert!(!off.passed());
     }
 }

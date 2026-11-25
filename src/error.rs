@@ -110,3 +110,74 @@ impl IntoResponse for ApiError {
         (status, Json(body)).into_response()
     }
 }
+
+#[cfg(test)]
+#[allow(clippy::unwrap_used, clippy::expect_used)]
+mod tests {
+    use super::*;
+    use http_body_util::BodyExt;
+
+    async fn render(err: ApiError) -> (StatusCode, serde_json::Value) {
+        let response = err.into_response();
+        let status = response.status();
+        let bytes = response.into_body().collect().await.unwrap().to_bytes();
+        (status, serde_json::from_slice(&bytes).unwrap())
+    }
+
+    #[tokio::test]
+    async fn too_many_streams_is_http_429_with_its_code() {
+        let (status, body) = render(ApiError::TooManyStreams).await;
+        assert_eq!(status, StatusCode::TOO_MANY_REQUESTS);
+        assert_eq!(body["success"], false);
+        assert_eq!(body["data"], serde_json::Value::Null);
+        assert_eq!(body["error"]["code"], "too_many_streams");
+    }
+
+    #[tokio::test]
+    async fn database_error_is_http_500_and_hides_the_cause() {
+        let (status, body) = render(ApiError::Db(sqlx::Error::Protocol(
+            "secret relation diogenes_x".into(),
+        )))
+        .await;
+        assert_eq!(status, StatusCode::INTERNAL_SERVER_ERROR);
+        assert_eq!(body["error"]["code"], "internal");
+        assert_eq!(body["error"]["message"], "Erro interno.");
+        assert!(!body.to_string().contains("secret"));
+    }
+
+    #[tokio::test]
+    async fn each_error_has_a_status_and_a_stable_code() {
+        let cases = [
+            (
+                ApiError::Unauthenticated,
+                StatusCode::UNAUTHORIZED,
+                "unauthenticated",
+            ),
+            (ApiError::Forbidden, StatusCode::FORBIDDEN, "forbidden"),
+            (ApiError::NotFound, StatusCode::NOT_FOUND, "not_found"),
+            (
+                ApiError::ModuleDisabled,
+                StatusCode::NOT_FOUND,
+                "module_disabled",
+            ),
+            (
+                ApiError::Invalid("x".into()),
+                StatusCode::BAD_REQUEST,
+                "invalid",
+            ),
+        ];
+        for (err, expected_status, code) in cases {
+            let (status, body) = render(err).await;
+            assert_eq!(status, expected_status);
+            assert_eq!(body["error"]["code"], code);
+        }
+    }
+
+    #[test]
+    fn ok_wraps_the_payload_in_a_success_envelope() {
+        let Json(envelope) = ok(5);
+        assert!(envelope.success);
+        assert_eq!(envelope.data, Some(5));
+        assert!(envelope.error.is_none());
+    }
+}

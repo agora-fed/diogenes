@@ -46,3 +46,26 @@ pub trait Identity: Send + Sync + 'static {
         true
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    struct Minimal;
+
+    #[async_trait]
+    impl Identity for Minimal {
+        async fn actor(&self, _parts: &Parts) -> Option<Actor> {
+            None
+        }
+
+        async fn find_user(&self, _org_id: Uuid, _handle: &str) -> Option<UserRef> {
+            None
+        }
+    }
+
+    #[tokio::test]
+    async fn module_is_active_unless_the_host_overrides_it() {
+        assert!(Minimal.module_active(Uuid::now_v7()).await);
+    }
+}

@@ -145,8 +145,81 @@ impl Hub {
 }
 
 #[cfg(test)]
+#[allow(clippy::unwrap_used, clippy::expect_used)]
 mod tests {
     use super::*;
+    use axum::response::IntoResponse;
+    use http_body_util::BodyExt;
+
+    /// Read the next data frame of an SSE response body as text.
+    async fn next_frame(body: &mut axum::body::Body) -> String {
+        let frame = tokio::time::timeout(Duration::from_secs(5), body.frame())
+            .await
+            .expect("a frame in time")
+            .expect("the stream is open")
+            .expect("no body error");
+        String::from_utf8(frame.into_data().expect("a data frame").to_vec()).unwrap()
+    }
+
+    fn change(what: &'static str) -> Change {
+        Change {
+            what,
+            scenario_id: None,
+            by: Uuid::nil(),
+        }
+    }
+
+    #[tokio::test]
+    async fn stream_sends_a_change_event_with_json_data() {
+        let hub = Hub::default();
+        let (project, user) = (Uuid::now_v7(), Uuid::now_v7());
+        let sse = hub.subscribe(project, user).expect("slot");
+        let mut body = sse.into_response().into_body();
+        hub.publish(project, change("notes"));
+        let frame = next_frame(&mut body).await;
+        assert!(frame.contains("event: change"), "{frame}");
+        assert!(frame.contains(r#""what":"notes""#), "{frame}");
+    }
+
+    #[tokio::test]
+    async fn slow_reader_gets_a_reload_event() {
+        let hub = Hub::default();
+        let (project, user) = (Uuid::now_v7(), Uuid::now_v7());
+        let sse = hub.subscribe(project, user).expect("slot");
+        let mut body = sse.into_response().into_body();
+        // More changes than the channel holds: the reader lags.
+        for _ in 0..=CHANNEL_CAPACITY {
+            hub.publish(project, change("positions"));
+        }
+        let frame = next_frame(&mut body).await;
+        assert!(frame.contains("event: reload"), "{frame}");
+        assert!(frame.contains("data: lagged"), "{frame}");
+    }
+
+    #[tokio::test]
+    async fn closed_stream_frees_the_slot_and_the_channel() {
+        let hub = Hub::default();
+        let (project, user) = (Uuid::now_v7(), Uuid::now_v7());
+        let sse = hub.subscribe(project, user).expect("slot");
+        assert_eq!(hub.open_streams(user), 1);
+        drop(sse);
+        assert_eq!(hub.open_streams(user), 0);
+        assert!(hub.lock().channels.is_empty());
+    }
+
+    #[tokio::test]
+    async fn hub_still_works_after_a_panic_with_the_lock() {
+        let hub = Hub::default();
+        let poisoner = hub.clone();
+        let result = std::thread::spawn(move || {
+            let _guard = poisoner.lock();
+            panic!("poison the lock");
+        })
+        .join();
+        assert!(result.is_err());
+        assert_eq!(hub.open_streams(Uuid::now_v7()), 0);
+        assert!(hub.subscribe(Uuid::now_v7(), Uuid::now_v7()).is_some());
+    }
 
     #[tokio::test]
     async fn publish_reaches_subscribers_of_the_same_project_only() {
