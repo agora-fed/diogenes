@@ -129,7 +129,7 @@ impl SyncConfig {
             |name: &str, default: u64| lookup(name).and_then(|v| v.parse().ok()).unwrap_or(default);
         let minutes = number("DIOGENES_ROLL_CALLS_EVERY_MIN", 60);
         let hours = number("DIOGENES_REFERENCE_EVERY_HOURS", 24);
-        let tse_enabled = lookup("DIOGENES_TSE_ENABLED").map_or(true, |v| v != "false");
+        let tse_enabled = lookup("DIOGENES_TSE_ENABLED").is_none_or(|v| v != "false");
         Self {
             roll_calls_since: since,
             roll_calls_every: Duration::from_secs(minutes.max(5) * 60),
