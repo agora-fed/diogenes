@@ -153,6 +153,14 @@ pub fn cents(value: &str) -> Option<i64> {
     Some(int * 100 + frac)
 }
 
+/// The six middle digits of a CPF (positions 4 to 9). The Receita file of partners shows
+/// a person CPF as `***123456**`: these digits are the only part that it publishes.
+#[must_use]
+pub fn cpf_part(cpf: &str) -> Option<String> {
+    let d = digits(cpf);
+    (d.len() == 11).then(|| d[3..9].to_owned())
+}
+
 fn digits(s: &str) -> String {
     s.chars().filter(char::is_ascii_digit).collect()
 }

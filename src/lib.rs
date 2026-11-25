@@ -12,6 +12,7 @@
 //! DIOGENES owns all tables with the prefix `diogenes_`. Call [`migrate`] at start.
 
 pub mod camara;
+pub mod companies;
 pub mod error;
 pub mod finance;
 pub mod identity;

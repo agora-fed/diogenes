@@ -1,9 +1,11 @@
 //! The campaign-finance API (ADR-0009).
 //!
-//! * `GET /diogenes/deputies/{camara_id}/campaign`: totals by source and the largest donors
-//!   of one deputy. A signed-in user of an org with the module on can read it.
+//! * `GET /diogenes/deputies/{camara_id}/campaign`: totals by source, the largest donors and
+//!   their companies, and the companies of the deputy. Public: the TSE and the Receita
+//!   publish these data as open data (ADR-0009, ADR-0010).
 //! * `GET /diogenes/scenarios/{id}/donors`: the money of each column of a scenario, and the
-//!   donors that gave to two or more deputies, by column. Room members only.
+//!   donors that gave to two or more deputies, and the activities of their companies, by
+//!   column. Room members only: the columns are the work of the room.
 //!
 //! The answers carry the source link and the import date. They state facts only.
 
@@ -19,6 +21,10 @@ use sqlx::PgPool;
 use uuid::Uuid;
 
 use super::{ELECTION_YEAR, SOURCE_PAGE};
+use crate::companies::api::{
+    company_source, deputy_companies, donor_companies, sectors, CompanySource, CompanyView, Sector,
+    COMPANIES_PER_DONOR,
+};
 use crate::error::{ok, ApiError, ApiResult, Envelope};
 use crate::room::access::{actor, require_scenario, Role};
 use crate::room::projects::load_columns;
@@ -28,10 +34,13 @@ use crate::DiogenesState;
 pub const DEPUTY_DONORS: i64 = 15;
 /// The number of shared donors in the answer for a scenario.
 pub const SHARED_DONORS: usize = 40;
+/// The companies of one shared donor in the answer for a scenario.
+pub const SHARED_COMPANIES: usize = 3;
 
 /// The routes of the finance API.
 pub fn routes() -> Router<DiogenesState> {
     Router::new()
+        .route("/diogenes/campaigns", get(crate::companies::api::list))
         .route("/diogenes/deputies/{camara_id}/campaign", get(deputy))
         .route("/diogenes/scenarios/{scenario_id}/donors", get(scenario))
 }
@@ -89,6 +98,29 @@ pub struct DonorView {
     pub cents: i64,
     /// True: the person gave to a party, and the party sent the money to the deputy.
     pub via_party: bool,
+    /// The companies where the donor is a partner (Receita), at most a few.
+    #[sqlx(skip)]
+    pub companies: Vec<CompanyView>,
+    /// The number of companies where the donor is a partner.
+    #[sqlx(skip)]
+    pub companies_total: i64,
+}
+
+/// The deputy of a campaign answer.
+#[derive(Debug, Serialize, sqlx::FromRow)]
+pub struct DeputyHead {
+    /// The Câmara id.
+    pub camara_id: i32,
+    /// The parliamentary name.
+    pub name: String,
+    /// The party.
+    pub party: Option<String>,
+    /// The state.
+    pub uf: Option<String>,
+    /// The photo.
+    pub photo_url: Option<String>,
+    /// True when the deputy is in office.
+    pub in_office: bool,
 }
 
 /// The campaign of one deputy.
@@ -101,24 +133,28 @@ pub struct Campaign {
     pub total_cents: i64,
     /// The money by source, largest first.
     pub totals: Vec<SourceTotal>,
+    /// The deputy.
+    pub deputy: DeputyHead,
     /// The largest donors.
     pub donors: Vec<DonorView>,
+    /// The companies where the deputy is a partner (Receita).
+    pub deputy_companies: Vec<CompanyView>,
+    /// The Receita data. `None`: no import yet.
+    pub companies_source: Option<CompanySource>,
 }
 
 async fn deputy(
     State(state): State<DiogenesState>,
     Path(camara_id): Path<i32>,
-    parts: Parts,
 ) -> ApiResult<Json<Envelope<Campaign>>> {
-    actor(&state, &parts).await?;
-    let known: bool =
-        sqlx::query_scalar("SELECT EXISTS (SELECT 1 FROM diogenes_deputy WHERE camara_id = $1)")
-            .bind(camara_id)
-            .fetch_one(&state.db)
-            .await?;
-    if !known {
-        return Err(ApiError::NotFound);
-    }
+    let deputy: DeputyHead = sqlx::query_as(
+        "SELECT camara_id, name, party, uf::text AS uf, photo_url, in_office
+           FROM diogenes_deputy WHERE camara_id = $1",
+    )
+    .bind(camara_id)
+    .fetch_optional(&state.db)
+    .await?
+    .ok_or(ApiError::NotFound)?;
     let totals = sqlx::query_as::<_, SourceTotal>(
         "SELECT source, cents, receipts FROM diogenes_campaign_total
           WHERE election_year = $1 AND camara_id = $2 ORDER BY cents DESC, source",
@@ -127,7 +163,7 @@ async fn deputy(
     .bind(camara_id)
     .fetch_all(&state.db)
     .await?;
-    let donors = sqlx::query_as::<_, DonorView>(
+    let mut donors = sqlx::query_as::<_, DonorView>(
         "SELECT n.key, n.name, n.kind, n.activity, n.uf, d.cents, d.via_party
            FROM diogenes_donation d
            JOIN diogenes_donor n ON n.election_year = d.election_year AND n.key = d.donor_key
@@ -139,11 +175,21 @@ async fn deputy(
     .bind(DEPUTY_DONORS)
     .fetch_all(&state.db)
     .await?;
+    let keys: Vec<&str> = donors.iter().map(|d| d.key.as_str()).collect();
+    let (companies, counts) = donor_companies(&state.db, &keys, COMPANIES_PER_DONOR).await?;
+    for d in &mut donors {
+        d.companies_total = counts.get(&d.key).copied().unwrap_or_default();
+        // A donor can appear twice (direct and through a party): both rows show the companies.
+        d.companies = companies.get(&d.key).cloned().unwrap_or_default();
+    }
     Ok(ok(Campaign {
         provenance: provenance(&state.db).await?,
         total_cents: totals.iter().map(|t| t.cents).sum(),
         totals,
         donors,
+        deputy_companies: deputy_companies(&state.db, camara_id).await?,
+        companies_source: company_source(&state.db).await?,
+        deputy,
     }))
 }
 
@@ -177,6 +223,10 @@ pub struct SharedDonor {
     pub cents: i64,
     /// Deputies per column id.
     pub by_column: BTreeMap<Uuid, i64>,
+    /// The companies where the donor is a partner (Receita), at most a few.
+    pub companies: Vec<CompanyView>,
+    /// The number of companies where the donor is a partner.
+    pub companies_total: i64,
 }
 
 /// The money of a scenario.
@@ -189,6 +239,10 @@ pub struct ScenarioMoney {
     pub columns: Vec<ColumnMoney>,
     /// The shared donors: most deputies first, then the largest value.
     pub donors: Vec<SharedDonor>,
+    /// The activities of the companies of the donors, most deputies first.
+    pub sectors: Vec<Sector>,
+    /// The Receita data. `None`: no import yet.
+    pub companies_source: Option<CompanySource>,
 }
 
 async fn scenario(
@@ -249,6 +303,8 @@ async fn scenario(
         provenance: provenance(&state.db).await?,
         columns: columns_out,
         donors,
+        sectors: sectors(&state.db, &column_of).await?,
+        companies_source: company_source(&state.db).await?,
     }))
 }
 
@@ -308,18 +364,21 @@ async fn shared_donors(
         .into_iter()
         .map(|(k, n, kind, a)| (k, (n, kind, a)))
         .collect();
+    let (mut companies, counts) = donor_companies(db, &keys, SHARED_COMPANIES).await?;
     Ok(ranked
         .into_iter()
         .filter_map(|(key, t)| {
             let (name, kind, activity) = names.get(&key)?.clone();
             Some(SharedDonor {
-                key,
                 name,
                 kind,
                 activity,
                 deputies: t.deputies,
                 cents: t.cents,
                 by_column: t.by_column,
+                companies_total: counts.get(&key).copied().unwrap_or_default(),
+                companies: companies.remove(&key).unwrap_or_default(),
+                key,
             })
         })
         .collect())

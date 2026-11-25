@@ -1,6 +1,6 @@
 # ADR-0009: Campaign finance from the TSE
 
-- Status: Accepted
+- Status: Accepted (decision 7 and the visibility changed on 2026-11-25, see below)
 - Date: 2026-11-25
 - Changes: ADR-0003 (data sources), ADR-0006 (personal data)
 
@@ -42,7 +42,7 @@ Facts about the 2022 data:
    changes at each import and nobody can test a CPF against it.
 7. API:
    - `GET /diogenes/deputies/{id}/campaign`: totals by source and the 15 largest donors.
-     A signed-in user of an org with the module on can read it.
+     Public: anyone can read it, also without a session (see "Change" below).
    - `GET /diogenes/scenarios/{id}/donors`: the money of each column, and the donors that
      gave to two or more deputies in office, with the number of deputies in each column.
      Only members of the room can read it.
@@ -56,9 +56,20 @@ Facts about the 2022 data:
 - An operator must start the job once after the deploy, and again when the TSE publishes a
   correction. One run takes approximately 3 minutes (513 Câmara requests and the archive).
 - A link between a person and a company needs a second data set (the partners of companies,
-  Receita Federal). This ADR does not include it.
+  Receita Federal). ADR-0010 adds it.
 - The names of individual donors are personal data that the TSE publishes for public
   control of elections (LGPD, art. 7, § 3 and § 4). DIOGENES uses them for the same purpose.
-  The host decides who can see them; the default is signed-in users only.
+  The campaign of a deputy is public (see "Change" below).
 - The 2026 accounts are for the next legislature. A later change can add the year as a
   parameter.
+
+## Change (2026-11-25): the campaign of a deputy is public
+
+The TSE publishes these data as open data, for public control of elections. The campaign of
+a deputy (`GET /diogenes/deputies/{id}/campaign`) and the new list of all deputies in office
+(`GET /diogenes/campaigns`) need no session. The host limits the reads per caller.
+
+The money of a scenario stays private to the members of the room: the columns of a scenario
+are the work of the room, not public data.
+
+The donations import now keeps the six middle CPF digits of each person donor (ADR-0010).

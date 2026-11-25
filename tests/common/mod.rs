@@ -30,7 +30,8 @@ pub async fn db() -> PgPool {
     diogenes::migrate(&db).await.expect("migrate");
     sqlx::raw_sql(
         "TRUNCATE diogenes_room, diogenes_deputy, diogenes_party, diogenes_group,
-                  diogenes_bill, diogenes_roll_call, diogenes_sync_run CASCADE",
+                  diogenes_bill, diogenes_roll_call, diogenes_sync_run, diogenes_donor,
+                  diogenes_company, diogenes_dataset CASCADE",
     )
     .execute(&db)
     .await

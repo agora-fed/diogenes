@@ -22,7 +22,9 @@ DIOGENES has two parts.
 - caucuses: women, self-declared Black and brown (TSE 2022), current leaders, the board;
 - plenary roll calls, with each vote, the party orientations and the bill;
 - the 2022 campaign accounts of each deputy (TSE): money by source and donors. An operator
-  starts this import by hand (ADR-0009).
+  starts this import by hand (ADR-0009). The campaign of a deputy is public;
+- the companies of the donors and of the deputies (Receita Federal CNPJ): an operator starts
+  this import by hand, after the donations import (ADR-0010).
 
 Each sync run checks the stored data against the totals that the source publishes.
 `GET /diogenes/sync/status` shows the result.
@@ -68,6 +70,9 @@ implement `Identity::member_added` to tell a new member about a room. See ADR-00
 | `DIOGENES_ROLL_CALLS_EVERY_MIN` | 60 | Minutes between two roll-call syncs. |
 | `DIOGENES_REFERENCE_EVERY_HOURS` | 24 | Hours between two syncs of deputies and groups. |
 | `DIOGENES_TSE_ENABLED` | true | Set `false` to skip the TSE colour/race import. |
+| `DIOGENES_RFB_CNPJ_URL` | Receita share (WebDAV) | The root of the CNPJ files (`companies` job). |
+| `DIOGENES_RFB_CNPJ_SHARE` | the public token | The share token, sent as the user name. |
+| `DIOGENES_RFB_CNPJ_MONTH` | last month | The month to read, `YYYY-MM`. |
 
 ## API
 

@@ -7,6 +7,10 @@ The versions follow Semantic Versioning.
 
 ### Added
 
+- Companies of the donors and of the deputies from the Receita Federal CNPJ open data: the
+  sync job `companies` (operator only, after `donations`), the companies in the campaign of
+  a deputy, and the shared donors and the sectors of a scenario (ADR-0010, migration 0004).
+- `GET /diogenes/campaigns`: the deputies in office with the total of their campaign.
 - Campaign finance from the TSE (2022) for the deputies in office: the sync job `donations`
   (operator only), totals by source, donors (with the original donors of party money), and
   the donors that a scenario shares across its columns. No CPF or CNPJ is stored
@@ -27,6 +31,11 @@ The versions follow Semantic Versioning.
   Before, the lock stayed on a pooled connection until the process ended.
 
 ### Changed
+
+- The campaign of a deputy is public. Before, a signed-in user of an org with the module on
+  could read it (ADR-0009, change of 2026-11-25).
+- The donations import keeps the six middle CPF digits of each person donor, the part that
+  the Receita publishes. The API never sends them (ADR-0010).
 
 - The CI gate for line coverage is now 95 percent (was 90).
 - New tests cover the Câmara client retries, the TSE import, the sync jobs and locks,

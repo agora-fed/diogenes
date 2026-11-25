@@ -152,6 +152,7 @@ async fn sync_jobs_store_reference_data_and_checks() {
         reference_every: std::time::Duration::from_secs(3600),
         tse_enabled: false,
         finance_url: String::new(),
+        cnpj: diogenes::companies::CnpjSource::default(),
     };
 
     // --- deputies ---
@@ -269,6 +270,7 @@ async fn groups_job_skips_a_front_that_fails_and_reports_it() {
         reference_every: std::time::Duration::from_secs(3600),
         tse_enabled: false,
         finance_url: String::new(),
+        cnpj: diogenes::companies::CnpjSource::default(),
     };
     run_job(&db, &client, &config, Job::Deputies)
         .await

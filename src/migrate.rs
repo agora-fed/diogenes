@@ -12,6 +12,7 @@ const MIGRATIONS: &[(i32, &str)] = &[
     (1, include_str!("../migrations/0001_init.sql")),
     (2, include_str!("../migrations/0002_project_rule.sql")),
     (3, include_str!("../migrations/0003_campaign_finance.sql")),
+    (4, include_str!("../migrations/0004_companies.sql")),
 ];
 
 /// Apply all migrations that are not applied yet. Each one runs in its own transaction.

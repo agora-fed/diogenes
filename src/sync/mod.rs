@@ -6,6 +6,8 @@
 //! * `groups`: fronts and members, caucuses (women, Black and brown, leaders, board).
 //! * `roll_calls`: plenary roll calls with votes, orientations and bills.
 //! * `donations`: campaign finance of the deputies in office (TSE). Only an operator starts it.
+//! * `companies`: companies of the donors and of the deputies (Receita Federal CNPJ). Only an
+//!   operator starts it, after `donations`.
 //!
 //! Each run writes one row in `diogenes_sync_run`, with the checks against the official
 //! totals. A check that fails gives the status `warning`, not `failed`: the data is still
@@ -67,15 +69,18 @@ pub enum Job {
     RollCalls,
     /// Campaign finance of the deputies in office (TSE). Only an operator starts it.
     Donations,
+    /// Companies of the donors and of the deputies (Receita Federal). Operator only.
+    Companies,
 }
 
 impl Job {
     /// All jobs, in dependency order.
-    pub const ALL: [Self; 4] = [
+    pub const ALL: [Self; 5] = [
         Self::Deputies,
         Self::Groups,
         Self::RollCalls,
         Self::Donations,
+        Self::Companies,
     ];
 
     /// The name of the job.
@@ -86,6 +91,7 @@ impl Job {
             Self::Groups => "groups",
             Self::RollCalls => "roll_calls",
             Self::Donations => "donations",
+            Self::Companies => "companies",
         }
     }
 
@@ -102,6 +108,7 @@ impl Job {
             Self::Groups => 0x0044_494F_0002,
             Self::RollCalls => 0x0044_494F_0003,
             Self::Donations => 0x0044_494F_0004,
+            Self::Companies => 0x0044_494F_0005,
         }
     }
 }
@@ -119,6 +126,8 @@ pub struct SyncConfig {
     pub tse_enabled: bool,
     /// The TSE campaign-finance archive of the `donations` job.
     pub finance_url: String,
+    /// Where the `companies` job reads the Receita CNPJ files.
+    pub cnpj: crate::companies::CnpjSource,
 }
 
 impl SyncConfig {
@@ -127,7 +136,9 @@ impl SyncConfig {
     /// `DIOGENES_ROLL_CALLS_EVERY_MIN` (default 60),
     /// `DIOGENES_REFERENCE_EVERY_HOURS` (default 24),
     /// `DIOGENES_TSE_ENABLED` (default true),
-    /// `DIOGENES_TSE_FINANCE_URL` (default: the 2022 archive of the TSE).
+    /// `DIOGENES_TSE_FINANCE_URL` (default: the 2022 archive of the TSE),
+    /// `DIOGENES_RFB_CNPJ_URL`, `DIOGENES_RFB_CNPJ_SHARE` (default: the public share of the
+    /// Receita) and `DIOGENES_RFB_CNPJ_MONTH` (`YYYY-MM`, default: the last month).
     #[must_use]
     pub fn from_env() -> Self {
         Self::from_lookup(|name| std::env::var(name).ok())
@@ -150,6 +161,13 @@ impl SyncConfig {
             tse_enabled,
             finance_url: lookup("DIOGENES_TSE_FINANCE_URL")
                 .unwrap_or_else(|| crate::finance::FINANCE_2022_URL.to_owned()),
+            cnpj: crate::companies::CnpjSource {
+                base: lookup("DIOGENES_RFB_CNPJ_URL")
+                    .unwrap_or_else(|| crate::companies::DEFAULT_BASE.to_owned()),
+                share: lookup("DIOGENES_RFB_CNPJ_SHARE")
+                    .unwrap_or_else(|| crate::companies::DEFAULT_SHARE.to_owned()),
+                month: lookup("DIOGENES_RFB_CNPJ_MONTH").filter(|m| !m.trim().is_empty()),
+            },
         }
     }
 }
@@ -192,6 +210,7 @@ pub async fn run_job(
         Job::Groups => groups::run(db, client).await,
         Job::RollCalls => roll_calls::run(db, client, config.roll_calls_since).await,
         Job::Donations => crate::finance::run(db, client, &config.finance_url).await,
+        Job::Companies => crate::companies::run(db, client, &config.cnpj).await,
     };
     let (status, items, checks, error) = match result {
         Ok(report) => {
@@ -248,6 +267,9 @@ pub enum JobError {
     /// The database failed.
     #[error(transparent)]
     Db(#[from] sqlx::Error),
+    /// The Receita CNPJ import failed.
+    #[error("cnpj: {0}")]
+    Cnpj(String),
 }
 
 /// Start the background scheduler. It runs all jobs at start, then on their intervals.

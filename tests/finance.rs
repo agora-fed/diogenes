@@ -94,6 +94,7 @@ fn config(url: String) -> SyncConfig {
         reference_every: std::time::Duration::from_secs(3600),
         tse_enabled: false,
         finance_url: url,
+        cnpj: diogenes::companies::CnpjSource::default(),
     }
 }
 
@@ -154,16 +155,18 @@ async fn donations_import_and_cross_with_a_scenario() {
     .unwrap();
     assert!(!leaked);
 
-    // The API: signed-in users of an org with the module on.
+    // The API: the campaign of a deputy is open data. Anonymous callers can read it.
     let org = Uuid::now_v7();
     let owner = User::new(org, "Ana", "ana", true);
     let stranger = User::new(org, "Bia", "bia", false);
     let app = app(db.clone(), &[&owner, &stranger], vec![]);
+    let (s, anon) = call(&app, "GET", "/diogenes/deputies/1/campaign", None, None).await;
+    assert_eq!(s, StatusCode::OK);
+    assert_eq!(anon["data"]["deputy"]["camara_id"], 1);
     assert_eq!(
-        call(&app, "GET", "/diogenes/deputies/1/campaign", None, None)
-            .await
-            .0,
-        StatusCode::UNAUTHORIZED
+        anon["data"]["companies_source"],
+        Value::Null,
+        "no Receita import yet"
     );
     assert_eq!(
         call(

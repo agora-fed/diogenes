@@ -139,6 +139,8 @@ pub struct DonorRow {
     pub activity: Option<String>,
     /// The state.
     pub uf: Option<String>,
+    /// The six middle digits of the CPF of a person (the part that the Receita publishes).
+    pub cpf_part: Option<String>,
 }
 
 /// The rows to write, grouped.
@@ -163,6 +165,9 @@ pub fn group(parsed: &Parsed, salt: &[u8]) -> Rows {
             name: d.name.clone(),
             activity: d.activity.clone(),
             uf: d.uf.clone(),
+            cpf_part: (d.kind == parse::DonorKind::Person)
+                .then(|| parse::cpf_part(&d.doc))
+                .flatten(),
         });
         key
     };
@@ -231,16 +236,19 @@ pub async fn write(db: &PgPool, year: i16, rows: &Rows) -> Result<(), sqlx::Erro
     let mut names = Vec::new();
     let mut activities = Vec::new();
     let mut ufs = Vec::new();
+    let mut parts = Vec::new();
     for (key, d) in &rows.donors {
         keys.push(key.as_str());
         kinds.push(d.kind);
         names.push(d.name.as_str());
         activities.push(d.activity.as_deref());
         ufs.push(d.uf.as_deref());
+        parts.push(d.cpf_part.as_deref());
     }
     sqlx::query(
-        "INSERT INTO diogenes_donor (election_year, key, kind, name, activity, uf)
-         SELECT $1, * FROM UNNEST($2::text[], $3::text[], $4::text[], $5::text[], $6::text[])",
+        "INSERT INTO diogenes_donor (election_year, key, kind, name, activity, uf, cpf_part)
+         SELECT $1, * FROM UNNEST($2::text[], $3::text[], $4::text[], $5::text[], $6::text[],
+                                  $7::text[])",
     )
     .bind(year)
     .bind(&keys)
@@ -248,6 +256,7 @@ pub async fn write(db: &PgPool, year: i16, rows: &Rows) -> Result<(), sqlx::Erro
     .bind(&names)
     .bind(&activities)
     .bind(&ufs)
+    .bind(&parts)
     .execute(&mut *tx)
     .await?;
     let mut ids = Vec::new();
@@ -277,17 +286,32 @@ pub async fn write(db: &PgPool, year: i16, rows: &Rows) -> Result<(), sqlx::Erro
     tx.commit().await
 }
 
-/// The `donations` job: import the accounts of `url` for the deputies in office.
+/// A deputy in office with the CPF and the civil name from the Câmara API. The CPF stays in
+/// memory only.
+#[derive(Debug, Clone)]
+pub struct DeputyPerson {
+    /// The Câmara id.
+    pub camara_id: i32,
+    /// The CPF, 11 digits. Empty when the API gives no valid CPF.
+    pub cpf: String,
+    /// The civil name.
+    pub civil_name: String,
+}
+
+/// Read the CPF and the civil name of each deputy in office from the Câmara API.
 ///
 /// # Errors
-/// Returns the first API, archive or database error. A failed run changes nothing.
-pub async fn run(db: &PgPool, client: &CamaraClient, url: &str) -> Result<JobReport, JobError> {
+/// Returns the first database or API error.
+pub async fn deputy_people(
+    db: &PgPool,
+    client: &CamaraClient,
+) -> Result<Vec<DeputyPerson>, JobError> {
     let in_office: Vec<i32> =
         sqlx::query_scalar("SELECT camara_id FROM diogenes_deputy WHERE in_office ORDER BY 1")
             .fetch_all(db)
             .await?;
-    let mut cpfs = HashMap::new();
-    for id in &in_office {
+    let mut out = Vec::with_capacity(in_office.len());
+    for id in in_office {
         let detail: DeputyDetail = client.get(&format!("deputados/{id}")).await?;
         let cpf: String = detail
             .cpf
@@ -296,10 +320,27 @@ pub async fn run(db: &PgPool, client: &CamaraClient, url: &str) -> Result<JobRep
             .chars()
             .filter(char::is_ascii_digit)
             .collect();
-        if cpf.len() == 11 {
-            cpfs.insert(cpf, *id);
-        }
+        out.push(DeputyPerson {
+            camara_id: id,
+            cpf: if cpf.len() == 11 { cpf } else { String::new() },
+            civil_name: detail.nome_civil.unwrap_or_default(),
+        });
     }
+    Ok(out)
+}
+
+/// The `donations` job: import the accounts of `url` for the deputies in office.
+///
+/// # Errors
+/// Returns the first API, archive or database error. A failed run changes nothing.
+pub async fn run(db: &PgPool, client: &CamaraClient, url: &str) -> Result<JobReport, JobError> {
+    let people = deputy_people(db, client).await?;
+    let in_office = people.len();
+    let cpfs: HashMap<String, i32> = people
+        .into_iter()
+        .filter(|p| !p.cpf.is_empty())
+        .map(|p| (p.cpf, p.camara_id))
+        .collect();
     let path = std::env::temp_dir().join(format!("diogenes-tse-{}.zip", uuid::Uuid::now_v7()));
     let parsed = async {
         download(url, &path, MAX_DOWNLOAD_BYTES).await?;
@@ -330,7 +371,7 @@ pub async fn run(db: &PgPool, client: &CamaraClient, url: &str) -> Result<JobRep
         checks: vec![
             Check {
                 subject: "deputies_with_accounts".into(),
-                expected: in_office.len() as i64,
+                expected: in_office as i64,
                 actual: matched as i64,
             },
             Check {

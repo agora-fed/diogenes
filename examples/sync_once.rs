@@ -4,7 +4,7 @@
 //! DATABASE_URL=postgres:///diogenes_dev cargo run --example sync_once -- groups
 //! ```
 //!
-//! Jobs: `deputies`, `groups`, `roll_calls`. The configuration comes from the environment
+//! Jobs: `deputies`, `groups`, `roll_calls`, `donations`, `companies`. The configuration comes from the environment
 //! (see `SyncConfig::from_env`).
 
 #![allow(clippy::expect_used)]
@@ -16,7 +16,7 @@ use diogenes::sync::{run_job, Job, SyncConfig};
 async fn main() {
     let name = std::env::args()
         .nth(1)
-        .expect("give a job: deputies, groups or roll_calls");
+        .expect("give a job: deputies, groups, roll_calls, donations or companies");
     let job = Job::parse(&name).expect("unknown job");
     let url = std::env::var("DATABASE_URL").expect("set DATABASE_URL");
     let db = sqlx::PgPool::connect(&url).await.expect("connect");

@@ -16,7 +16,9 @@ data protection law (LGPD) applies to notes about people.
 3. The audit table never stores note text.
 4. The API never sends the colour/race value of one deputy. Only the caucus membership
    shows it, as the TSE publishes it.
-5. DIOGENES does not store the CPF.
+5. DIOGENES does not store the CPF. For a person donor it keeps the six middle digits,
+   the only part that the Receita publishes with the name (ADR-0010). The API never sends
+   them.
 6. A non-member gets HTTP 404 for a room, not HTTP 403. Nobody can test which rooms exist.
 7. A room belongs to one org. A user of another org cannot see it.
 8. The interface tells members to write only about the public role of a deputy.
