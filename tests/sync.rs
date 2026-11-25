@@ -26,6 +26,8 @@ fn fixture(name: &str) -> Value {
 #[derive(Clone, Default)]
 struct Fake {
     calls: Arc<AtomicUsize>,
+    /// True: the list of fronts has a second front that the API does not know (HTTP 404).
+    broken_front: bool,
 }
 
 async fn fake_api(State(fake): State<Fake>, req: Request) -> Response {
@@ -77,7 +79,13 @@ async fn fake_api(State(fake): State<Fake>, req: Request) -> Response {
         }
         "orgaos/4/membros" => fixture("mesa.json"),
         "frentes" => {
-            json!({"dados": [{"id": 55703, "titulo": "Frente Parlamentar Mista do Serviço Exterior Brasileiro"}], "links": []})
+            let mut fronts = vec![
+                json!({"id": 55703, "titulo": "Frente Parlamentar Mista do Serviço Exterior Brasileiro"}),
+            ];
+            if fake.broken_front {
+                fronts.push(json!({"id": 99999, "titulo": "Frente sem dados"}));
+            }
+            json!({"dados": fronts, "links": []})
         }
         "frentes/55703" => fixture("frente_detail.json"),
         // Like the real API: this list is not paged and rejects `itens`.
@@ -110,7 +118,10 @@ async fn fake_api(State(fake): State<Fake>, req: Request) -> Response {
 }
 
 async fn start_fake() -> (String, Fake) {
-    let fake = Fake::default();
+    start_fake_with(Fake::default()).await
+}
+
+async fn start_fake_with(fake: Fake) -> (String, Fake) {
     let app = Router::new().fallback(fake_api).with_state(fake.clone());
     let listener = tokio::net::TcpListener::bind("[::1]:0").await.unwrap();
     let addr = listener.local_addr().unwrap();
@@ -238,4 +249,55 @@ async fn sync_jobs_store_reference_data_and_checks() {
     .await
     .unwrap();
     assert_eq!(orientations, 15);
+}
+
+#[tokio::test]
+#[ignore = "needs DATABASE_URL"]
+async fn groups_job_skips_a_front_that_fails_and_reports_it() {
+    let _guard = SERIAL.lock().await;
+    let db = db().await;
+    let (base, _) = start_fake_with(Fake {
+        broken_front: true,
+        ..Fake::default()
+    })
+    .await;
+    let client = CamaraClient::with_base(&base).unwrap();
+    let config = SyncConfig {
+        roll_calls_since: NaiveDate::from_ymd_opt(2026, 11, 1).unwrap(),
+        roll_calls_every: std::time::Duration::from_secs(3600),
+        reference_every: std::time::Duration::from_secs(3600),
+        tse_enabled: false,
+    };
+    run_job(&db, &client, &config, Job::Deputies)
+        .await
+        .unwrap()
+        .expect("ran");
+
+    run_job(&db, &client, &config, Job::Groups)
+        .await
+        .unwrap()
+        .expect("ran");
+
+    let (status, checks) = last_run(&db, "groups").await;
+    assert_eq!(status, "warning", "{checks}");
+    let errors = checks
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|c| c["subject"] == "front_errors")
+        .unwrap();
+    assert_eq!(
+        (errors["expected"].as_i64(), errors["actual"].as_i64()),
+        (Some(0), Some(1))
+    );
+    let stored: Vec<String> =
+        sqlx::query_scalar("SELECT id FROM diogenes_group WHERE id LIKE 'front:%'")
+            .fetch_all(&db)
+            .await
+            .unwrap();
+    assert_eq!(
+        stored,
+        vec!["front:55703".to_owned()],
+        "the good front is stored"
+    );
 }

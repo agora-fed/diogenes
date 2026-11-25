@@ -19,6 +19,30 @@ pub async fn run(
     client: &CamaraClient,
     tse_enabled: bool,
 ) -> Result<JobReport, JobError> {
+    let races = if tse_enabled {
+        match crate::tse::fetch_races_2022().await {
+            Ok(map) => Some(map),
+            Err(err) => {
+                tracing::warn!(error = %err, "diogenes tse import failed; keep old values");
+                None
+            }
+        }
+    } else {
+        None
+    };
+    run_with_races(db, client, races).await
+}
+
+/// Run the job with a CPF → race map that the caller already has. `None` keeps the stored
+/// race values. [`run`] gets the map from the TSE. Tests give a map and need no network.
+///
+/// # Errors
+/// Returns the first API or database error.
+pub async fn run_with_races(
+    db: &PgPool,
+    client: &CamaraClient,
+    races: Option<HashMap<String, String>>,
+) -> Result<JobReport, JobError> {
     let mut report = JobReport::default();
 
     let parties: Vec<Party> = client
@@ -36,18 +60,6 @@ pub async fn run(
         expected: SEATS,
         actual: in_office.len() as i64,
     });
-
-    let races = if tse_enabled {
-        match crate::tse::fetch_races_2022().await {
-            Ok(map) => Some(map),
-            Err(err) => {
-                tracing::warn!(error = %err, "diogenes tse import failed; keep old values");
-                None
-            }
-        }
-    } else {
-        None
-    };
 
     let mut women = 0_i64;
     let mut race_hits = 0_i64;

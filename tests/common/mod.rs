@@ -65,6 +65,8 @@ impl User {
 pub struct FakeIdentity {
     pub users: HashMap<Uuid, User>,
     pub disabled_orgs: Vec<Uuid>,
+    /// Users who can operate the data sync.
+    pub operators: Vec<Uuid>,
 }
 
 #[async_trait]
@@ -83,7 +85,7 @@ impl Identity for FakeIdentity {
             org_id: u.org,
             display_name: u.name.to_owned(),
             can_create_rooms: u.can_create,
-            can_operate_sync: false,
+            can_operate_sync: self.operators.contains(&u.id),
         })
     }
 
@@ -106,6 +108,17 @@ pub fn app(db: PgPool, users: &[&User], disabled_orgs: Vec<Uuid>) -> Router {
     let identity = FakeIdentity {
         users: users.iter().map(|u| (u.id, (*u).clone())).collect(),
         disabled_orgs,
+        operators: Vec::new(),
+    };
+    diogenes::api_router(DiogenesState::new(db, Arc::new(identity)))
+}
+
+/// Like [`app`], and the listed users can operate the data sync.
+pub fn app_with_operators(db: PgPool, users: &[&User], operators: &[&User]) -> Router {
+    let identity = FakeIdentity {
+        users: users.iter().map(|u| (u.id, (*u).clone())).collect(),
+        disabled_orgs: Vec::new(),
+        operators: operators.iter().map(|u| u.id).collect(),
     };
     diogenes::api_router(DiogenesState::new(db, Arc::new(identity)))
 }
