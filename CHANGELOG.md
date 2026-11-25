@@ -5,6 +5,15 @@ The versions follow Semantic Versioning.
 
 ## [Unreleased]
 
+### Added
+
+- `Identity::member_added` and the `MemberAdded` notice. DIOGENES calls it when a room
+  owner adds a new member. The default does nothing (ADR-0007).
+
+### Deprecated
+
+- `web_router` and the pages in `src/web`. The host draws the pages now (ADR-0007).
+
 ### Fixed
 
 - A sync job now frees its advisory lock when the database refuses the run row.

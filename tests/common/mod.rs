@@ -14,7 +14,7 @@ use axum::body::Body;
 use axum::http::request::Parts;
 use axum::http::{Request, StatusCode};
 use axum::Router;
-use diogenes::{Actor, DiogenesState, Identity, UserRef};
+use diogenes::{Actor, DiogenesState, Identity, MemberAdded, UserRef};
 use http_body_util::BodyExt;
 use serde_json::Value;
 use sqlx::PgPool;
@@ -67,7 +67,12 @@ pub struct FakeIdentity {
     pub disabled_orgs: Vec<Uuid>,
     /// Users who can operate the data sync.
     pub operators: Vec<Uuid>,
+    /// The member notices that DIOGENES sent to the host.
+    pub notices: Notices,
 }
+
+/// The member notices that a test can read.
+pub type Notices = Arc<std::sync::Mutex<Vec<MemberAdded>>>;
 
 #[async_trait]
 impl Identity for FakeIdentity {
@@ -102,6 +107,24 @@ impl Identity for FakeIdentity {
     async fn module_active(&self, org_id: Uuid) -> bool {
         !self.disabled_orgs.contains(&org_id)
     }
+
+    async fn member_added(&self, notice: MemberAdded) {
+        self.notices.lock().unwrap().push(notice);
+    }
+}
+
+/// Like [`app`], and return the member notices that the host gets.
+pub fn app_with_notices(db: PgPool, users: &[&User]) -> (Router, Notices) {
+    let notices = Notices::default();
+    let identity = FakeIdentity {
+        users: users.iter().map(|u| (u.id, (*u).clone())).collect(),
+        notices: notices.clone(),
+        ..FakeIdentity::default()
+    };
+    (
+        diogenes::api_router(DiogenesState::new(db, Arc::new(identity))),
+        notices,
+    )
 }
 
 pub fn app(db: PgPool, users: &[&User], disabled_orgs: Vec<Uuid>) -> Router {
@@ -109,6 +132,7 @@ pub fn app(db: PgPool, users: &[&User], disabled_orgs: Vec<Uuid>) -> Router {
         users: users.iter().map(|u| (u.id, (*u).clone())).collect(),
         disabled_orgs,
         operators: Vec::new(),
+        notices: Notices::default(),
     };
     diogenes::api_router(DiogenesState::new(db, Arc::new(identity)))
 }
@@ -119,6 +143,7 @@ pub fn app_with_operators(db: PgPool, users: &[&User], operators: &[&User]) -> R
         users: users.iter().map(|u| (u.id, (*u).clone())).collect(),
         disabled_orgs: Vec::new(),
         operators: operators.iter().map(|u| u.id).collect(),
+        notices: Notices::default(),
     };
     diogenes::api_router(DiogenesState::new(db, Arc::new(identity)))
 }

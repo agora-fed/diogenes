@@ -29,7 +29,7 @@ use axum::Router;
 use sqlx::PgPool;
 
 pub use error::{ApiError, ApiResult, Envelope};
-pub use identity::{Actor, Identity, UserRef};
+pub use identity::{Actor, Identity, MemberAdded, UserRef};
 pub use migrate::migrate;
 
 /// The shared state of all DIOGENES handlers.

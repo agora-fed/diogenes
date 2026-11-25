@@ -8,6 +8,7 @@ use uuid::Uuid;
 
 use super::access::{actor, audit, clean_name, require_room, Role};
 use crate::error::{ok, ApiError, ApiResult, Envelope};
+use crate::identity::MemberAdded;
 use crate::DiogenesState;
 
 const NAME_MAX: usize = 120;
@@ -252,19 +253,22 @@ pub(super) async fn add_member(
         .ok_or_else(|| ApiError::Invalid("Nenhuma pessoa com esse @ nesta organização.".into()))?;
     let mut tx = state.db.begin().await?;
     // Lock the room row: two owners who leave at the same time must not both succeed.
-    sqlx::query("SELECT id FROM diogenes_room WHERE id = $1 FOR UPDATE")
-        .bind(room_id)
-        .execute(&mut *tx)
-        .await?;
-    sqlx::query(
+    let room_name: String =
+        sqlx::query_scalar("SELECT name FROM diogenes_room WHERE id = $1 FOR UPDATE")
+            .bind(room_id)
+            .fetch_one(&mut *tx)
+            .await?;
+    // `xmax = 0` is true for a new row and false for an update (a role change).
+    let is_new: bool = sqlx::query_scalar(
         "INSERT INTO diogenes_room_member (room_id, user_id, display_name, role) VALUES ($1, $2, $3, $4)
-         ON CONFLICT (room_id, user_id) DO UPDATE SET role = EXCLUDED.role, display_name = EXCLUDED.display_name",
+         ON CONFLICT (room_id, user_id) DO UPDATE SET role = EXCLUDED.role, display_name = EXCLUDED.display_name
+         RETURNING (xmax = 0)",
     )
     .bind(room_id)
     .bind(user.user_id)
     .bind(&user.display_name)
     .bind(body.role.as_str())
-    .execute(&mut *tx)
+    .fetch_one(&mut *tx)
     .await?;
     ensure_owner_left(&mut tx, room_id).await?;
     audit(
@@ -276,6 +280,20 @@ pub(super) async fn add_member(
     )
     .await?;
     tx.commit().await?;
+    if is_new && user.user_id != me.user_id {
+        state
+            .identity
+            .member_added(MemberAdded {
+                org_id: me.org_id,
+                room_id,
+                room_name,
+                user_id: user.user_id,
+                role: body.role.as_str().to_owned(),
+                added_by: me.user_id,
+                added_by_name: me.display_name.clone(),
+            })
+            .await;
+    }
     Ok(ok(MemberView {
         user_id: user.user_id,
         display_name: user.display_name,

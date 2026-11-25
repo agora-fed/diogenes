@@ -47,13 +47,15 @@ use std::sync::Arc;
 
 let state = diogenes::DiogenesState::new(pool.clone(), Arc::new(MyIdentity { /* ... */ }));
 diogenes::migrate(&pool).await?;
-let app = axum::Router::new()
-    .nest("/api/v1", diogenes::api_router(state))
-    .merge(diogenes::web_router());
+let app = axum::Router::new().nest("/api/v1", diogenes::api_router(state));
 let _sync = diogenes::sync::spawn_scheduler(pool, diogenes::sync::SyncConfig::from_env());
 ```
 
 The host implements the `diogenes::Identity` trait. See ADR-0002.
+
+The host draws the pages with its own design system and calls the JSON API. The host can
+implement `Identity::member_added` to tell a new member about a room. See ADR-0007.
+`web_router` is deprecated. It stays for one release.
 
 ## Configuration
 
