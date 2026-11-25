@@ -7,6 +7,9 @@ The versions follow Semantic Versioning.
 
 ### Added
 
+- The approval rule of a project: `fixed` (a number of votes) or `simple` (more "yes" than
+  "no", with a quorum). The kind of the bill sets the default: PEC 308, PLP 257, other
+  kinds simple majority (ADR-0008, migration 0002).
 - `Identity::member_added` and the `MemberAdded` notice. DIOGENES calls it when a room
   owner adds a new member. The default does nothing (ADR-0007).
 

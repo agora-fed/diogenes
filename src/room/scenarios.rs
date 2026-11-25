@@ -12,7 +12,7 @@ use super::access::{actor, audit, clean_name, require_project, require_scenario,
 use super::projects::{insert_custom_column, load_columns, publish, ColumnView};
 use crate::error::{ok, ApiError, ApiResult, Envelope};
 use crate::reference::{current_chair, dissidents, load_votes};
-use crate::scoreboard::{outcome, Counts, Outcome};
+use crate::scoreboard::{outcome_with, Counts, Outcome, Rule};
 use crate::text::VoteKind;
 use crate::DiogenesState;
 
@@ -228,8 +228,10 @@ pub struct ScenarioDetail {
     pub counts: Counts,
     /// The number of deputies in office.
     pub total: i64,
-    /// The threshold of the project.
+    /// The threshold of the project. For the rule `simple` it is the quorum.
     pub threshold: i32,
+    /// The approval rule of the project.
+    pub rule: Rule,
     /// The outcome.
     pub outcome: Outcome,
     /// Orientations of the source roll call.
@@ -245,13 +247,14 @@ pub(super) async fn detail(
 ) -> ApiResult<Json<Envelope<ScenarioDetail>>> {
     let me = actor(&state, &parts).await?;
     let (_access, project_id) = require_scenario(&state.db, &me, scenario_id, Role::Viewer).await?;
-    let (name, source_roll_call, threshold): (String, Option<String>, i32) = sqlx::query_as(
-        "SELECT s.name, s.source_roll_call, p.threshold FROM diogenes_scenario s
+    let (name, source_roll_call, threshold, rule): (String, Option<String>, i32, Rule) =
+        sqlx::query_as(
+            "SELECT s.name, s.source_roll_call, p.threshold, p.rule FROM diogenes_scenario s
            JOIN diogenes_project p ON p.id = s.project_id WHERE s.id = $1",
-    )
-    .bind(scenario_id)
-    .fetch_one(&state.db)
-    .await?;
+        )
+        .bind(scenario_id)
+        .fetch_one(&state.db)
+        .await?;
     let columns = load_columns(&state.db, project_id).await?;
     let positions = sqlx::query_as::<_, PositionView>(
         "SELECT p.camara_id, p.column_id, p.updated_by, p.updated_at FROM diogenes_position p
@@ -278,13 +281,14 @@ pub(super) async fn detail(
         project_id,
         name,
         source_roll_call,
-        outcome: outcome(counts, i64::from(threshold), total),
+        outcome: outcome_with(rule, counts, i64::from(threshold), total),
         columns,
         positions,
         column_counts,
         counts,
         total,
         threshold,
+        rule,
         orientations,
         dissidents,
     }))

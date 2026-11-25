@@ -10,6 +10,7 @@ use uuid::Uuid;
 use super::access::{actor, audit, clean_name, require_project, require_room, Role};
 use super::events::Change;
 use crate::error::{ok, ApiError, ApiResult, Envelope};
+use crate::scoreboard::Rule;
 use crate::text::DeputyIndex;
 use crate::DiogenesState;
 
@@ -85,8 +86,10 @@ pub struct ProjectDetail {
     pub room_id: Uuid,
     /// The name.
     pub name: String,
-    /// The threshold.
+    /// The threshold. For the rule `simple` it is the quorum.
     pub threshold: i32,
+    /// The approval rule.
+    pub rule: Rule,
     /// The bill id.
     pub bill_id: Option<i32>,
     /// The role of the caller.
@@ -105,7 +108,37 @@ pub struct ProjectDetail {
 pub(super) struct NewProject {
     name: String,
     threshold: Option<i32>,
+    rule: Option<Rule>,
     bill_id: Option<i32>,
+}
+
+/// The rule and threshold of a new project. A value that the caller sends wins. Without
+/// values, the kind of a stored bill picks them (PEC 308, PLP 257, other kinds simple
+/// majority). Without a known bill: fixed, 257.
+async fn rule_and_threshold(
+    db: &sqlx::PgPool,
+    body: &NewProject,
+) -> Result<(Rule, i32), sqlx::Error> {
+    let kind: Option<String> = match body.bill_id {
+        Some(bill) => {
+            sqlx::query_scalar("SELECT kind FROM diogenes_bill WHERE camara_id = $1")
+                .bind(bill)
+                .fetch_optional(db)
+                .await?
+        }
+        None => None,
+    };
+    let by_kind = kind.as_deref().map(Rule::for_bill_kind);
+    let rule = body
+        .rule
+        .or(body.threshold.map(|_| Rule::Fixed))
+        .or(by_kind.map(|(r, _)| r))
+        .unwrap_or_default();
+    let threshold = body.threshold.unwrap_or_else(|| match (rule, by_kind) {
+        (Rule::Fixed, Some((Rule::Fixed, t))) => i32::try_from(t).unwrap_or(257),
+        _ => 257,
+    });
+    Ok((rule, threshold))
 }
 
 fn check_threshold(t: i32) -> ApiResult<i32> {
@@ -127,17 +160,19 @@ pub(super) async fn create(
     let me = actor(&state, &parts).await?;
     require_room(&state.db, &me, room_id, Role::Editor).await?;
     let name = clean_name(&body.name, NAME_MAX)?;
-    let threshold = check_threshold(body.threshold.unwrap_or(257))?;
+    let (rule, threshold) = rule_and_threshold(&state.db, &body).await?;
+    let threshold = check_threshold(threshold)?;
     let id = Uuid::now_v7();
     let mut tx = state.db.begin().await?;
     sqlx::query(
-        "INSERT INTO diogenes_project (id, room_id, name, threshold, bill_id, created_by)
-         VALUES ($1, $2, $3, $4, $5, $6)",
+        "INSERT INTO diogenes_project (id, room_id, name, threshold, rule, bill_id, created_by)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)",
     )
     .bind(id)
     .bind(room_id)
     .bind(&name)
     .bind(threshold)
+    .bind(rule)
     .bind(body.bill_id)
     .bind(me.user_id)
     .execute(&mut *tx)
@@ -160,7 +195,7 @@ pub(super) async fn create(
         room_id,
         &me,
         "project.create",
-        serde_json::json!({ "project_id": id, "name": name }),
+        serde_json::json!({ "project_id": id, "name": name, "rule": rule, "threshold": threshold }),
     )
     .await?;
     tx.commit().await?;
@@ -174,8 +209,8 @@ pub(super) async fn detail(
 ) -> ApiResult<Json<Envelope<ProjectDetail>>> {
     let me = actor(&state, &parts).await?;
     let access = require_project(&state.db, &me, project_id, Role::Viewer).await?;
-    let (name, threshold, bill_id): (String, i32, Option<i32>) =
-        sqlx::query_as("SELECT name, threshold, bill_id FROM diogenes_project WHERE id = $1")
+    let (name, threshold, rule, bill_id): (String, i32, Rule, Option<i32>) =
+        sqlx::query_as("SELECT name, threshold, rule, bill_id FROM diogenes_project WHERE id = $1")
             .bind(project_id)
             .fetch_one(&state.db)
             .await?;
@@ -214,6 +249,7 @@ pub(super) async fn detail(
         room_id: access.room_id,
         name,
         threshold,
+        rule,
         bill_id,
         role: access.role,
         columns,
@@ -243,6 +279,7 @@ pub async fn load_columns(
 pub(super) struct PatchProject {
     name: Option<String>,
     threshold: Option<i32>,
+    rule: Option<Rule>,
     /// `Some(None)` clears the bill.
     #[serde(default, with = "double_option")]
     bill_id: Option<Option<i32>>,
@@ -276,7 +313,8 @@ pub(super) async fn patch(
     sqlx::query(
         "UPDATE diogenes_project
             SET name = COALESCE($2, name), threshold = COALESCE($3, threshold),
-                bill_id = CASE WHEN $4 THEN $5 ELSE bill_id END
+                bill_id = CASE WHEN $4 THEN $5 ELSE bill_id END,
+                rule = COALESCE($6, rule)
           WHERE id = $1",
     )
     .bind(project_id)
@@ -284,6 +322,7 @@ pub(super) async fn patch(
     .bind(threshold)
     .bind(body.bill_id.is_some())
     .bind(body.bill_id.flatten())
+    .bind(body.rule)
     .execute(&mut *tx)
     .await?;
     audit(
@@ -291,7 +330,7 @@ pub(super) async fn patch(
         access.room_id,
         &me,
         "project.update",
-        serde_json::json!({ "project_id": project_id, "name": name, "threshold": threshold, "bill_id": body.bill_id }),
+        serde_json::json!({ "project_id": project_id, "name": name, "threshold": threshold, "rule": body.rule, "bill_id": body.bill_id }),
     )
     .await?;
     tx.commit().await?;

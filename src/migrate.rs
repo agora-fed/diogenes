@@ -8,7 +8,10 @@
 use sqlx::PgPool;
 
 /// The embedded migrations: (version, SQL). Keep the list in ascending order.
-const MIGRATIONS: &[(i32, &str)] = &[(1, include_str!("../migrations/0001_init.sql"))];
+const MIGRATIONS: &[(i32, &str)] = &[
+    (1, include_str!("../migrations/0001_init.sql")),
+    (2, include_str!("../migrations/0002_project_rule.sql")),
+];
 
 /// Apply all migrations that are not applied yet. Each one runs in its own transaction.
 ///

@@ -45,8 +45,10 @@ pub struct ProjectSummary {
     pub id: Uuid,
     /// The name.
     pub name: String,
-    /// The threshold.
+    /// The threshold. For the rule `simple` it is the quorum.
     pub threshold: i32,
+    /// The approval rule.
+    pub rule: crate::scoreboard::Rule,
     /// The bill id.
     pub bill_id: Option<i32>,
 }
@@ -171,7 +173,7 @@ pub(super) async fn detail(
     .fetch_all(&state.db)
     .await?;
     let projects = sqlx::query_as::<_, ProjectSummary>(
-        "SELECT id, name, threshold, bill_id FROM diogenes_project WHERE room_id = $1 ORDER BY created_at",
+        "SELECT id, name, threshold, rule, bill_id FROM diogenes_project WHERE room_id = $1 ORDER BY created_at",
     )
     .bind(room_id)
     .fetch_all(&state.db)

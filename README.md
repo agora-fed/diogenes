@@ -28,7 +28,8 @@ Each sync run checks the stored data against the totals that the source publishe
 **Articulation rooms.** A room is a private work area for a team, in the area
 `/articulacao/` of the host site. In a room, the team can:
 
-- make one project for each bill or vote, with a threshold (257 by default);
+- make one project for each bill or vote, with an approval rule (the kind of the bill sets
+  it: PEC 308 votes, PLP 257 votes, other kinds a simple majority with a quorum of 257);
 - move deputies between columns: Sim, Não, Em disputa, Ausente, Presidente, Sem posição,
   and custom columns;
 - keep many scenarios, and make a scenario from a real roll call;
