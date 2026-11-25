@@ -291,7 +291,10 @@ async fn companies_of_donors_and_deputies() {
     assert_eq!(company["city"], "SORRISO");
     assert_eq!(company["since"], "2010-01-05");
     assert_eq!(company["capital_cents"], 500_000_000);
-    assert_eq!(company["namesakes"], 1, "one other JOSE DOADOR in the partner file");
+    assert_eq!(
+        company["namesakes"], 1,
+        "one other JOSE DOADOR in the partner file"
+    );
     assert!(
         jose.get("cpf_part").is_none(),
         "the API never sends the CPF digits"
