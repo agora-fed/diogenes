@@ -257,22 +257,27 @@ pub struct CampaignList {
 
 /// `GET /diogenes/campaigns`.
 pub async fn list(State(state): State<DiogenesState>) -> ApiResult<Json<Envelope<CampaignList>>> {
+    // One aggregate per table, then joins: the correlated subqueries took seconds once the
+    // company links were in.
     let deputies = sqlx::query_as::<_, CampaignRow>(
-        "SELECT d.camara_id, d.name, d.party, d.uf::text AS uf, d.photo_url,
-                COALESCE((SELECT sum(t.cents) FROM diogenes_campaign_total t
-                           WHERE t.election_year = $1 AND t.camara_id = d.camara_id), 0)::bigint
-                    AS total_cents,
-                COALESCE((SELECT sum(t.cents) FROM diogenes_campaign_total t
-                           WHERE t.election_year = $1 AND t.camara_id = d.camara_id
-                             AND t.source = 'individuals'), 0)::bigint
-                    AS people_cents,
-                (SELECT count(DISTINCT n.donor_key) FROM diogenes_donation n
-                   JOIN diogenes_donor_company l ON l.election_year = n.election_year
-                                                AND l.donor_key = n.donor_key
-                  WHERE n.election_year = $1 AND n.camara_id = d.camara_id) AS donors_with_companies,
-                (SELECT count(*) FROM diogenes_deputy_company c WHERE c.camara_id = d.camara_id)
-                    AS own_companies
+        "WITH t AS (SELECT camara_id, sum(cents)::bigint AS total,
+                           COALESCE(sum(cents) FILTER (WHERE source = 'individuals'), 0)::bigint
+                               AS people
+                      FROM diogenes_campaign_total WHERE election_year = $1 GROUP BY 1),
+              l AS (SELECT n.camara_id, count(DISTINCT n.donor_key) AS c
+                      FROM diogenes_donation n
+                     WHERE n.election_year = $1
+                       AND EXISTS (SELECT 1 FROM diogenes_donor_company l
+                                    WHERE l.election_year = $1 AND l.donor_key = n.donor_key)
+                     GROUP BY 1),
+              o AS (SELECT camara_id, count(*) AS c FROM diogenes_deputy_company GROUP BY 1)
+         SELECT d.camara_id, d.name, d.party, d.uf::text AS uf, d.photo_url,
+                COALESCE(t.total, 0) AS total_cents, COALESCE(t.people, 0) AS people_cents,
+                COALESCE(l.c, 0) AS donors_with_companies, COALESCE(o.c, 0) AS own_companies
            FROM diogenes_deputy d
+           LEFT JOIN t ON t.camara_id = d.camara_id
+           LEFT JOIN l ON l.camara_id = d.camara_id
+           LEFT JOIN o ON o.camara_id = d.camara_id
           WHERE d.in_office
           ORDER BY total_cents DESC, d.name",
     )
